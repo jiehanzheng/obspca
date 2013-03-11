@@ -21,13 +21,27 @@
 
 <div class="container">
 
-  <div class="alert alert-error">
-    <strong>STOP!</strong>
-    This is not the official Outer Banks SPCA website yet.
+  <div class="row">
+    <div class="alert alert-error">
+      <strong>Example announcement:</strong>
+      This is not the official Outer Banks SPCA website yet.
+    </div>
+
+    <div class="alert alert-info">
+      Under construction.
+    </div>
   </div>
 
-  <div class="alert alert-info">
-    Under construction.
+  <div class="row">
+    <div class="span8">
+      <h2>News</h2>
+    </div>
+    <div class="span4">
+      <div class="well">
+        <p>Donation and stuff</p>
+      </div>
+      <h2>Featured Pets</h2>
+    </div>
   </div>
 
 <?php get_footer(); ?>
