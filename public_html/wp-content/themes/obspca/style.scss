@@ -1,0 +1,26 @@
+/*
+Theme Name: Outer Banks SPCA
+Author: jiehanzheng
+Author URI: http://jiehan.org/
+Version: 0.1
+Text Domain: obspca 
+*/
+
+body {
+	padding-top: 20px;
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+.home {
+	.carousel {
+		margin: {
+			top: -70px;
+			bottom: 20px;
+		}
+	}
+
+	.navbar {
+		z-index: 9999;
+	}
+}
