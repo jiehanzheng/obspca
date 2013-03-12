@@ -21,8 +21,17 @@
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" 
          title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" 
          rel="home"><?php bloginfo('name'); ?></a>
-      <?php wp_nav_menu(array( 'theme-location' => 'primary',
-                               'container' => false,
-                               'menu_class' => 'nav',
-                               'walker' => new Bootstrap_Walker_Nav_Menu )); ?>
+
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="nav-collapse collapse navbar-responsive-collapse">
+	      <?php wp_nav_menu(array( 'theme-location' => 'primary',
+	                               'container' => false,
+	                               'menu_class' => 'nav',
+	                               'walker' => new Bootstrap_Walker_Nav_Menu )); ?>
+      </div>
     </div>

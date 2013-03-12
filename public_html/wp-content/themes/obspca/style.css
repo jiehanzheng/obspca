@@ -9,8 +9,10 @@ body {
   color: #5a5a5a; }
   @media (min-width: 767px) {
     body {
-      padding-top: 40px;
-      padding-bottom: 50px; } }
+      padding-top: 40px; } }
+  @media (max-width: 766px) {
+    body {
+      padding-top: 70px; } }
 
 .home .carousel {
   max-width: 1170px;
