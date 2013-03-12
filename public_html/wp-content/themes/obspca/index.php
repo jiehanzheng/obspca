@@ -34,7 +34,13 @@
   </div>
 
   <div class="row">
-    <div class="span8">
+    <div class="span3">
+      <h2>Featured Pets</h2>
+      <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
+      <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
+      <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
+    </div>
+    <div class="span5">
       <?php if ( have_posts() ) : ?>
         <?php /* Start the Loop */ ?>
         <?php while ( have_posts() ) : the_post(); ?>
@@ -46,7 +52,6 @@
       <div class="well">
         <p>Donation and stuff</p>
       </div>
-      <h2>Featured Pets</h2>
     </div>
   </div>
 
