@@ -6,12 +6,29 @@ Version: 0.1
 Text Domain: obspca 
 */
 body {
-  padding-top: 20px;
-  padding-bottom: 40px;
   color: #5a5a5a; }
+  @media (min-width: 767px) {
+    body {
+      padding-top: 40px;
+      padding-bottom: 50px; } }
 
 .home .carousel {
-  margin-top: -70px;
-  margin-bottom: 20px; }
+  max-width: 1170px;
+  min-height: 200px;
+  max-height: 300px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto; }
+  @media (min-width: 1170px) {
+    .home .carousel {
+      margin-top: 30px;
+      margin-bottom: 20px; } }
+  @media (max-width: 1169px) {
+    .home .carousel {
+      margin-top: -90px;
+      margin-bottom: 20px; } }
 .home .navbar {
   z-index: 9999; }
+  @media (min-width: 767px) and (max-width: 1169px) {
+    .home .navbar {
+      top: -20px; } }

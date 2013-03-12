@@ -17,7 +17,7 @@
 
 <body <?php body_class(); ?>>
   <div class="container">
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" 
          title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" 
          rel="home"><?php bloginfo('name'); ?></a>

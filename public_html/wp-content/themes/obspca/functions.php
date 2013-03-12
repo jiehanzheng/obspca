@@ -46,6 +46,8 @@ function obspca_scripts_styles() {
   wp_enqueue_script('bootstrap-carousel', get_template_directory_uri() . '/bootstrap/js/bootstrap-carousel.js');
   wp_enqueue_script('bootstrap-dropdown', get_template_directory_uri() . '/bootstrap/js/bootstrap-dropdown.js');
 
+  if (is_home())
+    wp_enqueue_script('responsive-carousel', get_template_directory_uri() . '/js/responsive-carousel.js');
 }
 add_action( 'wp_enqueue_scripts', 'obspca_scripts_styles' );
 

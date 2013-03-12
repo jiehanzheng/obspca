@@ -7,20 +7,44 @@ Text Domain: obspca
 */
 
 body {
-	padding-top: 20px;
-  padding-bottom: 40px;
   color: #5a5a5a;
+
+  @media (min-width: 767px) {
+	  padding-top: 40px;
+	  padding-bottom: 50px;
+	}
 }
 
 .home {
 	.carousel {
-		margin: {
-			top: -70px;
-			bottom: 20px;
+		max-width: 1170px;
+		min-height: 200px;
+		max-height: 300px;
+		overflow: hidden;
+
+		margin-right: auto;
+		margin-left: auto;
+
+		@media (min-width: 1170px) {
+			margin: {
+				top: 30px;
+				bottom: 20px;
+			}
+		}
+
+		@media (max-width: 1169px) {
+			margin: {
+				top: -90px;
+				bottom: 20px;
+			}
 		}
 	}
 
 	.navbar {
 		z-index: 9999;
+
+		@media (min-width: 767px) and (max-width: 1169px) {
+			top: -20px;
+		}
 	}
 }
