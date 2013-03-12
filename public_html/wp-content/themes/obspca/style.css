@@ -32,3 +32,11 @@ body {
   @media (min-width: 767px) and (max-width: 1169px) {
     .home .navbar {
       top: -20px; } }
+
+#footer {
+  background-color: #f5f5f5;
+  padding: 20px 0; }
+  #footer .dl-horizontal dt {
+    width: 110px; }
+  #footer .dl-horizontal dd {
+    margin-left: 130px; }

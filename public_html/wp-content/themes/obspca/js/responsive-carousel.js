@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
 
 
 function reorganize_header() {
-  if (jQuery(window).width() >= 1170 || jQuery(window).width() <= 767) {
+  if (jQuery(window).width() >= 1169 || jQuery(window).width() <= 767) {
     jQuery('.navbar').addClass('navbar-fixed-top');
   } else {
     jQuery('.navbar').removeClass('navbar-fixed-top');

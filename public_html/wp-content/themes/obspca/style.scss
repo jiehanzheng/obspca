@@ -48,3 +48,16 @@ body {
 		}
 	}
 }
+
+#footer {
+  background-color: #f5f5f5;
+  padding: 20px 0;
+
+  .dl-horizontal dt {
+    width: 110px;
+  }
+
+  .dl-horizontal dd {
+    margin-left: 130px;
+  }
+}
