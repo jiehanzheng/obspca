@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"curl",
+				"curl_setopt"
+			],
+			[
+				"function",
+				"function_name"
+			],
+			[
+				"ke",
+				"keys_allowed"
+			],
+			[
+				"array_fill",
+				"array_fill_keys"
+			],
+			[
+				"array_int",
+				"array_intersect_key"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"bod",
+				"body_pattern"
+			],
+			[
 				"user",
 				"username"
 			],
@@ -170,10 +198,6 @@
 			[
 				"wav",
 				"wav_path"
-			],
-			[
-				"print",
-				"print_similarity_list"
 			],
 			[
 				"sort",
@@ -490,30 +514,6 @@
 			[
 				"aut",
 				"authenticationCode"
-			],
-			[
-				"sco",
-				"oauthScope"
-			],
-			[
-				"base",
-				"queryBase"
-			],
-			[
-				"api",
-				"apikey"
-			],
-			[
-				"sql",
-				"sqlOverHttpsUrlTemplate"
-			],
-			[
-				"obj",
-				"objResponse"
-			],
-			[
-				"OA",
-				"OAuthService"
 			]
 		]
 	},
@@ -523,31 +523,40 @@
 			"file": "public_html/wp-content/plugins/petpoint/petpoint.php",
 			"settings":
 			{
-				"buffer_size": 198,
+				"buffer_size": 463,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public_html/wp-content/plugins/petpoint/petpoint_soap.php",
+			"file": "public_html/wp-content/plugins/petpoint/petpoint-api.php",
 			"settings":
 			{
-				"buffer_size": 37,
+				"buffer_size": 1904,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/jiehan/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+			"file": "public_html/wp-content/plugins/petpoint/ms-soap-client.php",
 			"settings":
 			{
-				"buffer_size": 123,
+				"buffer_size": 912,
+				"line_ending": "Unix",
+				"name": "class MSSoapClient extends SoapClient {"
+			}
+		},
+		{
+			"contents": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:ns1=\"http://www.petango.com/\"><env:Body><ns1:AdoptableSearch><ns1:speciesID>1</ns1:speciesID><ns1:orderBy>ID</ns1:orderBy></ns1:AdoptableSearch></env:Body></env:Envelope>",
+			"settings":
+			{
+				"buffer_size": 281,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/jiehan/.config/sublime-text-3/Packages/User/GitGutter.sublime-settings",
+			"file": "public_html/wp-content/themes/obspca/index.php",
 			"settings":
 			{
-				"buffer_size": 229,
+				"buffer_size": 1764,
 				"line_ending": "Unix"
 			}
 		},
@@ -568,9 +577,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 212.0,
+		"height": 92.0,
 		"selected_items":
 		[
+			[
+				"ssphp",
+				"Set Syntax: PHP"
+			],
 			[
 				"inst",
 				"Package Control: Install Package"
@@ -668,7 +681,7 @@
 				"Set Syntax: Java"
 			]
 		],
-		"width": 449.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -691,6 +704,8 @@
 	"file_history":
 	[
 		"/home/jiehan/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/footer.php",
+		"/home/jiehan/.config/sublime-text-3/Packages/User/GitGutter.sublime-settings",
 		"/home/jiehan/workspace/obspca/public_html/xmlrpc.php",
 		"/home/jiehan/.config/sublime-text-3/Packages/Emmet/Default (Linux).sublime-keymap",
 		"/home/jiehan/.config/sublime-text-3/Packages/LiveReload/LiveReload.sublime-settings",
@@ -701,7 +716,6 @@
 		"/home/jiehan/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/index.php",
 		"/home/jiehan/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/jiehan/.config/sublime-text-3/Packages/User/GitGutter.sublime-settings",
 		"/home/jiehan/Downloads/style.scssc",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/style.css",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/header.php",
@@ -816,8 +830,7 @@
 		"/home/jiehan/workspace/peddie_communityservice/config/routes.rb",
 		"/home/jiehan/workspace/peddie_communityservice/spec/fixtures/committees.yml",
 		"/home/jiehan/workspace/peddie_communityservice/spec/fixtures/users.yml",
-		"/home/jiehan/workspace/peddie_communityservice/spec/fixtures/shifts.yml",
-		"/home/jiehan/workspace/peddie_communityservice/spec/fixtures/signups.yml"
+		"/home/jiehan/workspace/peddie_communityservice/spec/fixtures/shifts.yml"
 	],
 	"find":
 	{
@@ -836,6 +849,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"authkey",
+			"authKey",
+			"keys_allowed",
+			"__getLastRequest",
+			"<ns1:([\\w:]+)>(.*)</ns1:\\1>",
+			"\\n",
+			"<([\\w:]+)>(.*)</\\1>",
+			"<([\\w:]+)></\\1>",
+			"    ",
+			"petpont",
 			"handler",
 			"raise Exception()",
 			"/407",
@@ -953,24 +976,16 @@
 			"adv_score",
 			"sample",
 			"1",
-			"y_threshold",
-			"tmpl_Y",
-			"sample_Y",
-			"tmpl",
-			"Y2",
-			"Y1",
-			"freq2",
-			"freq1",
-			"20",
-			"Y1",
-			"frq2"
+			"y_threshold"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"<\\1>\\2</\\1>",
+			"",
 			"  ",
 			"=A",
 			"B",
@@ -1001,15 +1016,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 198,
+						"buffer_size": 463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								195,
-								195
+								454,
+								454
 							]
 						],
 						"settings":
@@ -1025,19 +1040,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "public_html/wp-content/plugins/petpoint/petpoint_soap.php",
+					"file": "public_html/wp-content/plugins/petpoint/petpoint-api.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 37,
+						"buffer_size": 1904,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								37,
-								37
+								1078,
+								1078
 							]
 						],
 						"settings":
@@ -1052,24 +1067,25 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/home/jiehan/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+					"file": "public_html/wp-content/plugins/petpoint/ms-soap-client.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 123,
+						"buffer_size": 912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								123,
-								123
+								818,
+								818
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"auto_name": "class MSSoapClient extends SoapClient {",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1079,27 +1095,55 @@
 				},
 				{
 					"buffer": 3,
-					"file": "/home/jiehan/.config/sublime-text-3/Packages/User/GitGutter.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 229,
+						"buffer_size": 281,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								281,
+								281
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/XML/XML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public_html/wp-content/themes/obspca/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								992,
+								992
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1111,7 +1155,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/home/jiehan/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 					"semi_transient": false,
 					"settings":
@@ -1129,7 +1173,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 630.0,
@@ -1168,7 +1214,7 @@
 		"cols":
 		[
 			0.0,
-			0.51342556069,
+			0.561248544273,
 			1.0
 		],
 		"rows":

@@ -33,14 +33,17 @@
     Under construction.
   </div>
 
-  <?php petpoint_get_functions(); ?>
+  <?php //query_pets(); ?>
+  <?php //query_pet(array("animalID" => "13809115")); ?>
 
   <div class="row">
     <div class="span3">
       <h2>Featured Pets</h2>
-      <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
-      <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
-      <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
+      <?php query_pets(array("orderBy" => "ID")); ?>
+      <?php test_pet(); ?>
+      <?php //while (have_pets()): the_pet(); print_r(the_pet_object()) ?>
+        <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
+      <?php //endwhile; ?>
     </div>
     <div class="span5">
       <?php if ( have_posts() ) : ?>
