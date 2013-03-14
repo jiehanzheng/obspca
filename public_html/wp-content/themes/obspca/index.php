@@ -33,6 +33,8 @@
     Under construction.
   </div>
 
+  <?php petpoint_get_functions(); ?>
+
   <div class="row">
     <div class="span3">
       <h2>Featured Pets</h2>
