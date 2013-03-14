@@ -8,7 +8,7 @@ Author URI: http://jiehan.org/
 License: MIT
 */
 
-require 'petpoint-soap.php';
+require 'petpoint-api.php';
 
 $petpoint = new PetPoint_SOAP("qnt7b4wrdmn86kr3py7dwgsrlcjl1sd6tshkwrkvyydeu87n1a",
                              "search",
@@ -16,10 +16,5 @@ $petpoint = new PetPoint_SOAP("qnt7b4wrdmn86kr3py7dwgsrlcjl1sd6tshkwrkvyydeu87n1
                                    "speciesID" => "1"));
 
 
-function petpoint_get_functions() {
-  global $petpoint;
-
-  $petpoint->get_functions();
-}
 
 ?>
