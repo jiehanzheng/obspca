@@ -40,10 +40,11 @@
     <div class="span3">
       <h2>Featured Pets</h2>
       <?php query_pets(array("orderBy" => "ID")); ?>
-      <?php test_pet(); ?>
-      <?php //while (have_pets()): the_pet(); print_r(the_pet_object()) ?>
-        <img src="http://placehold.it/100x100" class="img-circle" alt="cats" />
-      <?php //endwhile; ?>
+      <?php while (have_pets()): the_pet(); ?>
+        <a href="/pets?animalID=<?php echo the_pet_id() ?>">
+          <img src="<?php echo the_pet_image() ?>" class="img-circle" alt="cats" />
+        </a>
+      <?php endwhile; ?>
     </div>
     <div class="span5">
       <?php if ( have_posts() ) : ?>

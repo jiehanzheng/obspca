@@ -70,25 +70,19 @@ function the_pet_object() {
 }
 
 
-function test_pet() {
+function the_pet_id() {
   global $petpoint;
-  $petpoint->next();
-  print_r(the_pet_object());
-  $petpoint->next();
-  print_r(the_pet_object());
-  $petpoint->next();
-  print_r(the_pet_object());
-  $petpoint->next();
-  print_r(the_pet_object());
-  $petpoint->next();
-  print_r(the_pet_object());
-  $petpoint->next();
-  print_r(the_pet_object());
+  return $petpoint->get_id();
 }
 
+function the_pet_name() {
+  global $petpoint;
+  return $petpoint->get_name();
+}
 
 function the_pet_image() {
-
+  global $petpoint;
+  return $petpoint->get_image();
 }
 
 

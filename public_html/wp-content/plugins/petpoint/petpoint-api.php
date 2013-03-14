@@ -14,7 +14,7 @@ class PetPoint_API {
 
 
   private $results;
-  private $pointer_loc = -1;
+  private $pointer_loc = 0;
 
 
   function __construct($operation, $params) {
@@ -51,7 +51,8 @@ class PetPoint_API {
     echo "<!-- petpoint: removed $rows_affected outdated cache entries. -->\n";
 
     // if a valid cache exists, use it and don't request
-    $db_fingerprint = $function_name . '(' . serialize(ksort($params)) . ')';
+    ksort($params);
+    $db_fingerprint = $function_name . '(' . serialize($params) . ')';
 
     if (strlen($db_fingerprint) >= 255) {
       $up = new Exception('params are too long.');
@@ -101,39 +102,61 @@ class PetPoint_API {
     }
 
     // parse it
-    $xml_tree = new SimpleXMLIterator($response);
+    try {
+      $xml_tree = new SimpleXMLIterator($response);
+    } catch (Exception $e) {
+      $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}petpoint_cache 
+                                   WHERE `query` = %s",
+                                  $db_fingerprint));
+      throw new Exception("fucked up");
+    }
 
     if (isset($xml_tree->XmlNode)) { // a list
-      $this->result = $xml_tree;
+      $this->results = $xml_tree;
     } else { // animal detail
       // strip away xml doctype
       $response = preg_replace('/^.+\n/', '', $response);
-      $this->result = new SimpleXMLIterator("<ArrayOfXmlNode><XmlNode>$response</XmlNode></ArrayOfXmlNode>");
+      $this->results = new SimpleXMLIterator("<ArrayOfXmlNode><XmlNode>$response</XmlNode></ArrayOfXmlNode>");
     }
 
-    $xml_tree->rewind();
+    $this->results->rewind();
   }
 
 
   function next() {
-    $this->result->next();
-    echo "\nnext";
+    $this->results->next();
+    $this->pointer_loc++;
   }
 
   function rewind() {
-    $this->result->rewind();
-    echo "\nrewind";
+    $this->results->rewind();
+    $this->pointer_loc--;
   }
 
   function has_next() {
-    $this->result->next();
-    $validity = $this->result->valid();
-    $this->result->rewind();
-    return $validity;
+    if ($this->pointer_loc + 1 < $this->results->count())
+      return true;
+    return false;
   }
 
   function current() {
-    return $this->result->current();
+    return $this->results->current();
+  }
+
+  function get_image() {
+    $pet = $this->results->current()->children()->children();
+    return $pet->Photo;
+  }
+
+  function get_id() {
+    $pet = $this->results->current()->children()->children();
+    if (isset($pet->animalID)) return $pet->animalID;
+    return $pet->ID;
+  }
+
+  function get_name() {
+    $pet = $this->results->current()->children()->children();
+    return $pet->AnimalName;
   }
 
 }
