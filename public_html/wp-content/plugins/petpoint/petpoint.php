@@ -69,6 +69,10 @@ function the_pet_object() {
   return $petpoint->current();
 }
 
+function the_pet_debug() {
+  global $petpoint;
+  return $petpoint->dump();
+}
 
 function the_pet_id() {
   global $petpoint;
@@ -87,9 +91,29 @@ function the_pet_image() {
 
 
 function the_pet_species() {
-
+  global $petpoint;
+  return $petpoint->get_species();
 }
 
+function the_pet_breed() {
+  global $petpoint;
+  return $petpoint->get_breed();
+}
+
+function the_pet_secondary_breed() {
+  global $petpoint;
+  return $petpoint->get_secondary_breed();
+}
+
+function the_pet_color() {
+  global $petpoint;
+  return $petpoint->get_color();
+}
+
+function the_pet_secondary_color() {
+  global $petpoint;
+  return $petpoint->get_secondary_color();
+}
 
 function the_pet_sex() {
 

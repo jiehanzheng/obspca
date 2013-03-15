@@ -140,23 +140,68 @@ class PetPoint_API {
   }
 
   function current() {
-    return $this->results->current();
+    return $this->results->current()->children()->children();
+  }
+
+  function current_trimmed() {
+    return trim($this->current());
+  }
+
+  function dump() {
+    $pet = $this->current();
+    var_dump($pet);
   }
 
   function get_image() {
-    $pet = $this->results->current()->children()->children();
-    return $pet->Photo;
+    $pet = $this->current();
+    if (isset($pet->Photo1)) return trim($pet->Photo1);
+    return trim($pet->Photo);
+  }
+
+  function get_image2() {
+    $pet = $this->current();
+    return trim($pet->Photo2);
+  }
+
+  function get_image3() {
+    $pet = $this->current();
+    return trim($pet->Photo3);
   }
 
   function get_id() {
-    $pet = $this->results->current()->children()->children();
-    if (isset($pet->animalID)) return $pet->animalID;
-    return $pet->ID;
+    $pet = $this->current();
+    if (isset($pet->animalID)) return trim($pet->animalID);
+    return trim($pet->ID);
   }
 
   function get_name() {
-    $pet = $this->results->current()->children()->children();
-    return $pet->AnimalName;
+    $pet = $this->current();
+    return trim($pet->AnimalName);
+  }
+
+  function get_species() {
+    $pet = $this->current();
+    return trim($pet->Species);
+  }
+
+  function get_breed() {
+    $pet = $this->current();
+    return trim($pet->PrimaryBreed);
+  }
+
+  function get_secondary_breed() {
+    $pet = $this->current();
+    return trim($pet->SecondaryBreed);
+  }
+
+  function get_color() {
+    $pet = $this->current();
+    return trim($pet->PrimaryColor);
+  }
+
+  function get_secondary_color() {
+    $pet = $this->current();
+    return trim($pet->SecondaryColor);
   }
 
 }
