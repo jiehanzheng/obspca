@@ -79,6 +79,9 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', true);
+define('SAVEQUERIES', true);
+
+define('FS_METHOD', 'direct');
 
 /* That's all, stop editing! Happy blogging. */
 

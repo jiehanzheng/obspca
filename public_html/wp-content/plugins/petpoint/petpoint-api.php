@@ -5,7 +5,7 @@ class PetPoint_API {
   /**
    * API Base, with a trailing slash
    */
-  const API_BASE = "http://qag.petpoint.com/webservices/wsadoption.asmx/";
+  const API_BASE = "http://www.petango.com/webservices/wsadoption.asmx/";
 
   /**
    * Cache TTL (in minutes)
@@ -66,7 +66,7 @@ class PetPoint_API {
       echo "<!-- petpoint: cache hit: $db_fingerprint -->\n";
       $response = $cached_data;
     } else {
-      echo "<!-- petpoint: CACHE MISSED -->\n";
+      echo "<!-- petpoint: cache MISSED: $db_fingerprint -->\n";
 
       // add authkey
       if ( ! $params['authkey'] = get_option('petpoint_authkey') ) {
@@ -87,12 +87,14 @@ class PetPoint_API {
 
       // perform request
       if ( ! $response = curl_exec($ch) ) {
-        $up = new Exception("Unable to communicate with PetPoint server: "
+        throw new Exception("Unable to communicate with PetPoint server: "
                             . curl_error($ch));
-        throw $up;  // ha ha
       }
 
       // cache result
+      $wpdb->hide_errors(); // in case another request added a cache entry
+                            // before us, which will cause a Duplicate entry
+                            // error.  Let's hide that!
       $wpdb->insert($wpdb->prefix . "petpoint_cache", 
                     array("query" => $db_fingerprint,
                           "data" => $response));
@@ -108,7 +110,7 @@ class PetPoint_API {
       $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}petpoint_cache 
                                    WHERE `query` = %s",
                                   $db_fingerprint));
-      throw new Exception("fucked up");
+      throw new Exception("Problem parsing the response from PetPoint.");
     }
 
     if (isset($xml_tree->XmlNode)) { // a list
@@ -182,6 +184,11 @@ class PetPoint_API {
   function get_species() {
     $pet = $this->current();
     return trim($pet->Species);
+  }
+
+  function get_sex() {
+    $pet = $this->current();
+    return trim($pet->Sex);
   }
 
   function get_breed() {

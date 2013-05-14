@@ -37,16 +37,31 @@
   <?php //query_pet(array("animalID" => "13809115")); ?>
 
   <div class="row">
-    <div class="span3">
+    <div id="featured_pets" class="span4">
       <h2>Featured Pets</h2>
-      <?php query_pets(array("orderBy" => "ID")); ?>
-      <?php while (have_pets()): the_pet(); ?>
-        <a href="/pets?animalID=<?php echo the_pet_id() ?>">
-          <img src="<?php echo the_pet_image() ?>" class="img-circle" alt="cats" />
-        </a>
-      <?php endwhile; ?>
+      <ul class="media-list">
+        <?php query_posts('category_name=featured-pets') ?>
+        <?php while (have_posts()): the_post(); ?>
+          <li class="media">
+            <?php query_pet(array("animalID" => get_the_title())); ?>
+            <a class="pull-left" href="<?php echo esc_attr(get_the_pet_path()); ?>">
+              <img src="<?php echo esc_attr(get_the_pet_image()); ?>" />
+            </a>
+            <div class="media-body">
+              <h4>
+                <a href="<?php echo esc_attr(get_the_pet_path()); ?>">
+                  <?php the_pet_name(); ?>
+                </a>
+              </h4>
+              <?php the_excerpt(); ?>
+            </div>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+      <?php wp_reset_query(); ?>
     </div>
     <div class="span5">
+      <h2>News Feed</h2>
       <?php if ( have_posts() ) : ?>
         <?php /* Start the Loop */ ?>
         <?php while ( have_posts() ) : the_post(); ?>
@@ -54,7 +69,7 @@
         <?php endwhile; ?>
       <?php endif; // end have_posts() check ?>
     </div>
-    <div class="span4">
+    <div class="span3">
       <div class="well">
         <p>Donation and stuff</p>
       </div>

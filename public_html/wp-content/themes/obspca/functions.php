@@ -46,11 +46,20 @@ function obspca_scripts_styles() {
   wp_enqueue_script('bootstrap-carousel', get_template_directory_uri() . '/bootstrap/js/bootstrap-carousel.js');
   wp_enqueue_script('bootstrap-dropdown', get_template_directory_uri() . '/bootstrap/js/bootstrap-dropdown.js');
   wp_enqueue_script('bootstrap-collapse', get_template_directory_uri() . '/bootstrap/js/bootstrap-collapse.js');
-
-  if (is_home())
-    wp_enqueue_script('responsive-carousel', get_template_directory_uri() . '/js/responsive-carousel.js');
 }
 add_action( 'wp_enqueue_scripts', 'obspca_scripts_styles' );
+
+
+/**
+ * Alter the main loop on homepage to make it get News only
+ */
+function obspca_alter_homepage_query($query) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set('category_name', 'news');
+    }
+}
+add_action('pre_get_posts', 'obspca_alter_homepage_query');
+
 
 /**
  * Creates a nicely formatted and more specific title element text
@@ -84,8 +93,6 @@ add_filter( 'wp_title', 'obspca_wp_title', 10, 2 );
 
 /**
  * Registers our main widget area and the front page widget areas.
- *
- * @since Twenty Twelve 1.0
  */
 function obspca_widgets_init() {
   register_sidebar( array(
@@ -99,6 +106,37 @@ function obspca_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'obspca_widgets_init' );
+
+
+/**
+ * Return relative time in human-readable form
+ *
+ * Taken from http://www.zachstronaut.com/posts/2009/01/20/php-relative-date-time-string.html
+ */
+function obspca_time_elapsed_string($ptime) {
+  $etime = time() - $ptime;
+  
+  if ($etime < 1) {
+    return '0 seconds';
+  }
+  
+  $a = array( 12 * 30 * 24 * 60 * 60  =>  'year',
+              30 * 24 * 60 * 60       =>  'month',
+              24 * 60 * 60            =>  'day',
+              60 * 60                 =>  'hour',
+              60                      =>  'minute',
+              1                       =>  'second' );
+  
+  foreach ($a as $secs => $str) {
+    $d = $etime / $secs;
+    if ($d >= 1) {
+      $r = round($d);
+      return $r . ' ' . $str . ($r > 1 ? 's' : '');
+    }
+  }
+}
+
+
 
 if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
 /**
@@ -231,6 +269,7 @@ function twentytwelve_entry_meta() {
   );
 }
 endif;
+
 
 /**
  * Extends the default WordPress body class to denote:

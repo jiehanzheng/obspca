@@ -36,6 +36,12 @@ get_header(); ?>
           <?php endif; ?>
         </td>
       </tr>
+      <tr>
+        <th>Sex</th>
+        <td>
+          <?php echo the_pet_sex(); ?>
+        </td>
+      </tr>
     </tbody>
   </table>
   <pre>

@@ -74,20 +74,29 @@ function the_pet_debug() {
   return $petpoint->dump();
 }
 
-function the_pet_id() {
+function get_the_pet_path() {
+  global $petpoint;
+  return "/pets?animalID=" . get_the_pet_id();
+}
+
+function get_the_pet_id() {
   global $petpoint;
   return $petpoint->get_id();
 }
 
-function the_pet_name() {
+function get_the_pet_name() {
   global $petpoint;
   return $petpoint->get_name();
 }
+function the_pet_name() { echo esc_html(get_the_pet_name()); }
 
-function the_pet_image() {
+function the_pet_has_images() {}
+
+function get_the_pet_image() {
   global $petpoint;
   return $petpoint->get_image();
 }
+function the_pet_image() { echo esc_html(get_the_pet_image()); }
 
 
 function the_pet_species() {
@@ -116,7 +125,8 @@ function the_pet_secondary_color() {
 }
 
 function the_pet_sex() {
-
+  global $petpoint;
+  return $petpoint->get_sex();
 }
 
 
