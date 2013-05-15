@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: The PetPoint Loop
-Description: Provide WordPress Loop-like interface to PetPoint APIs.
+Description: Provide the WordPress Loop-like interface to PetPoint APIs.  Set your authentication key under "Settings" > "Media".
 Version: 0.1
 Author: Jiehan Zheng
 Author URI: http://jiehan.org/
@@ -79,10 +79,13 @@ function get_the_pet_path() {
   return "/pets?animalID=" . get_the_pet_id();
 }
 
+
 function get_the_pet_id() {
   global $petpoint;
   return $petpoint->get_id();
 }
+function the_pet_id() { echo esc_html(get_the_pet_id()); }
+
 
 function get_the_pet_name() {
   global $petpoint;
@@ -90,7 +93,9 @@ function get_the_pet_name() {
 }
 function the_pet_name() { echo esc_html(get_the_pet_name()); }
 
+
 function the_pet_has_images() {}
+
 
 function get_the_pet_image() {
   global $petpoint;
@@ -99,108 +104,119 @@ function get_the_pet_image() {
 function the_pet_image() { echo esc_html(get_the_pet_image()); }
 
 
-function the_pet_species() {
+function get_the_pet_species() {
   global $petpoint;
   return $petpoint->get_species();
 }
+function the_pet_species() { echo esc_html(get_the_pet_species()); }
 
-function the_pet_breed() {
+
+function get_the_pet_breed() {
   global $petpoint;
   return $petpoint->get_breed();
 }
+function the_pet_breed() { echo esc_html(get_the_pet_breed()); }
 
-function the_pet_secondary_breed() {
+
+function get_the_pet_secondary_breed() {
   global $petpoint;
   return $petpoint->get_secondary_breed();
 }
+function the_pet_secondary_breed() { echo esc_html(get_the_pet_secondary_breed()); }
 
-function the_pet_color() {
+
+function get_the_pet_color() {
   global $petpoint;
   return $petpoint->get_color();
 }
+function the_pet_color() { echo esc_html(get_the_pet_color()); }
 
-function the_pet_secondary_color() {
+
+function get_the_pet_secondary_color() {
   global $petpoint;
   return $petpoint->get_secondary_color();
 }
+function the_pet_secondary_color() { echo esc_html(get_the_pet_secondary_color()); }
 
-function the_pet_sex() {
+
+function get_the_pet_sex() {
   global $petpoint;
   return $petpoint->get_sex();
 }
+function the_pet_sex() { echo esc_html(get_the_pet_sex()); }
 
 
-function the_pet_primary_breed() {
-
-}
-
-
-function the_pet_age() {
+function get_the_pet_primary_breed() {
 
 }
 
 
-function the_pet_no_dogs() {
+function get_the_pet_age() {
 
 }
 
 
-function the_pet_no_cats() {
+function get_the_pet_no_dogs() {
 
 }
 
 
-function the_pet_no_kids() {
+function get_the_pet_no_cats() {
 
 }
 
 
-function the_pet_behavior_result() {
+function get_the_pet_no_kids() {
 
 }
 
 
-function the_pet_memo_list() {
+function get_the_pet_behavior_result() {
 
 }
 
 
-function the_pet_arn() {
+function get_the_pet_memo_list() {
 
 }
 
 
-function the_pet_behavior_test_list() {
+function get_the_pet_arn() {
 
 }
 
 
-function the_pet_stage() {
+function get_the_pet_behavior_test_list() {
 
 }
 
 
-function the_pet_animal_type() {
+function get_the_pet_stage() {
 
 }
 
 
-function the_pet_age_group() {
+function get_the_pet_animal_type() {
 
 }
 
 
-function the_pet_wildlife_intake_injury() {
+function get_the_pet_age_group() {
 
 }
 
 
-function the_pet_wildlife_intake_cause() {
+function get_the_pet_wildlife_intake_injury() {
 
 }
 
 
-function the_pet_buddy_id() {
+function get_the_pet_wildlife_intake_cause() {
+
+}
+
+
+function get_the_pet_buddy_id() {
 
 }
 

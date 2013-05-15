@@ -6,21 +6,27 @@ Version: 0.1
 Text Domain: obspca 
 */
 body {
-  color: #5a5a5a; }
-  @media (min-width: 767px) {
-    body {
-      padding-top: 40px; } }
-  @media (max-width: 766px) {
-    body {
-      padding-top: 70px; } }
+  color: #5a5a5a;
+  padding-top: 70px; }
+
+.navbar #fixed_logo {
+  width: 100px; }
+  .navbar #fixed_logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; }
 
 .home .carousel {
   max-width: 1170px;
-  min-height: 200px;
-  max-height: 300px;
+  height: 280px;
   overflow: hidden;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  margin-bottom: 20px; }
+  .home .carousel img {
+    height: 100%;
+    max-width: none !important; }
 .home #featured_pets img {
   width: 100px; }
 

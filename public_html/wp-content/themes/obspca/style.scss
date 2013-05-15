@@ -9,13 +9,20 @@ Text Domain: obspca
 
 body {
   color: #5a5a5a;
+  padding-top: 70px;
+}
 
-  @media (min-width: 767px) {
-	  padding-top: 40px;
-	}
 
-  @media (max-width: 766px) {
-    padding-top: 70px;
+.navbar {
+  #fixed_logo {
+    width: 100px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+    }
   }
 }
 
@@ -23,26 +30,19 @@ body {
 .home {
 	.carousel {
 		max-width: 1170px;
-		min-height: 200px;
-		max-height: 300px;
+		height: 280px;
 		overflow: hidden;
 
-		margin-right: auto;
-		margin-left: auto;
+		margin: {
+      right: auto;
+		  left: auto;
+      bottom: 20px;
+    }
 
-		// @media (min-width: 1170px) {
-		// 	margin: {
-		// 		top: 30px;
-		// 		bottom: 20px;
-		// 	}
-		// }
-
-		// @media (max-width: 1169px) {
-		// 	margin: {
-		// 		top: -90px;
-		// 		bottom: 20px;
-		// 	}
-		// }
+    img {
+      height: 100%;
+      max-width: none !important;
+    }
 	}
 
   #featured_pets {

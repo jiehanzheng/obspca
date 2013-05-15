@@ -42,10 +42,10 @@ function obspca_scripts_styles() {
    * Bootstrap components
    */
   wp_enqueue_script('jquery');
-  wp_enqueue_script('bootstrap-transition', get_template_directory_uri() . '/bootstrap/js/bootstrap-transition.js');
-  wp_enqueue_script('bootstrap-carousel', get_template_directory_uri() . '/bootstrap/js/bootstrap-carousel.js');
-  wp_enqueue_script('bootstrap-dropdown', get_template_directory_uri() . '/bootstrap/js/bootstrap-dropdown.js');
-  wp_enqueue_script('bootstrap-collapse', get_template_directory_uri() . '/bootstrap/js/bootstrap-collapse.js');
+  wp_enqueue_script('bootstrap-transition', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-transition.js');
+  wp_enqueue_script('bootstrap-carousel', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-carousel.js');
+  wp_enqueue_script('bootstrap-dropdown', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-dropdown.js');
+  wp_enqueue_script('bootstrap-collapse', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-collapse.js');
 }
 add_action( 'wp_enqueue_scripts', 'obspca_scripts_styles' );
 

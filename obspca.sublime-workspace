@@ -523,7 +523,7 @@
 			"file": "public_html/wp-content/plugins/petpoint/petpoint.php",
 			"settings":
 			{
-				"buffer_size": 3496,
+				"buffer_size": 3820,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "public_html/wp-content/plugins/petpoint/petpoint-api.php",
 			"settings":
 			{
-				"buffer_size": 5696,
+				"buffer_size": 5993,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,15 @@
 			"file": "public_html/wp-content/themes/obspca/functions.php",
 			"settings":
 			{
-				"buffer_size": 17361,
+				"buffer_size": 17526,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/wp-content/themes/obspca/header.php",
+			"settings":
+			{
+				"buffer_size": 1825,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +555,7 @@
 			"file": "public_html/wp-content/themes/obspca/page-templates/pets.php",
 			"settings":
 			{
-				"buffer_size": 1124,
+				"buffer_size": 1234,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,7 +563,7 @@
 			"file": "/srv/http/obspca/wp-config.php",
 			"settings":
 			{
-				"buffer_size": 3365,
+				"buffer_size": 3426,
 				"line_ending": "Windows"
 			}
 		},
@@ -563,7 +571,7 @@
 			"file": "public_html/wp-content/themes/obspca/index.php",
 			"settings":
 			{
-				"buffer_size": 1885,
+				"buffer_size": 2392,
 				"line_ending": "Unix"
 			}
 		},
@@ -588,7 +596,7 @@
 			"file": "public_html/wp-content/themes/obspca/style.scss",
 			"settings":
 			{
-				"buffer_size": 853,
+				"buffer_size": 729,
 				"line_ending": "Unix"
 			}
 		}
@@ -596,9 +604,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 212.0,
+		"height": 272.0,
 		"selected_items":
 		[
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
 			[
 				"inst",
 				"Package Control: Install Package"
@@ -700,7 +712,7 @@
 				"Set Syntax: Java"
 			]
 		],
-		"width": 575.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -722,6 +734,9 @@
 	},
 	"file_history":
 	[
+		"/home/jiehan/workspace/obspca/public_html/wp-includes/theme-compat/header.php",
+		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/style.scss",
+		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/style.css",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/page-templates/pets",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/plugins/petpoint/ms-soap-client.php",
 		"/home/jiehan/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
@@ -738,7 +753,6 @@
 		"/home/jiehan/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/index.php",
 		"/home/jiehan/Downloads/style.scssc",
-		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/style.css",
 		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/header.php",
 		"/home/jiehan/workspace/obspca/.sublime-project",
 		"/home/jiehan/workspace/squid2radius/README.md",
@@ -847,9 +861,7 @@
 		"/home/jiehan/workspace/peddie_communityservice/spec/features/counting_mechanism_spec.rb",
 		"/home/jiehan/workspace/peddie_communityservice/app/views/signups/_form.html.erb",
 		"/home/jiehan/workspace/peddie_communityservice/config/settings.yml",
-		"/home/jiehan/workspace/peddie_communityservice/db/seeds.rb",
-		"/home/jiehan/workspace/peddie_communityservice/config/routes.rb",
-		"/home/jiehan/workspace/peddie_communityservice/spec/fixtures/committees.yml"
+		"/home/jiehan/workspace/peddie_communityservice/db/seeds.rb"
 	],
 	"find":
 	{
@@ -868,6 +880,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"span",
+			"exclude_category",
 			"return",
 			"$pet = $this->results->current()->children()->children();",
 			"result",
@@ -993,9 +1007,7 @@
 			"CHUNK",
 			"    ",
 			".675",
-			"x1",
-			"lookup_tbl",
-			"0.5"
+			"x1"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1026,7 +1038,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1035,15 +1047,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3496,
+						"buffer_size": 3820,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								578,
-								578
+								1175,
+								1175
 							]
 						],
 						"settings":
@@ -1054,7 +1066,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 735.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1065,15 +1077,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5696,
+						"buffer_size": 5993,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								487,
+								487
 							]
 						],
 						"settings":
@@ -1094,15 +1106,44 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17361,
+						"buffer_size": 17526,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								667,
-								667
+								1134,
+								1134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public_html/wp-content/themes/obspca/header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1825,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1226,
+								1226
 							]
 						],
 						"settings":
@@ -1120,24 +1161,24 @@
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 5,
 			"sheets":
 			[
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "public_html/wp-content/themes/obspca/page-templates/pets.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1124,
+						"buffer_size": 1234,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								368,
-								368
+								311,
+								311
 							]
 						],
 						"settings":
@@ -1145,33 +1186,6 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/srv/http/obspca/wp-config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3365,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1062,
-								1062
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1181,19 +1195,46 @@
 				},
 				{
 					"buffer": 5,
-					"file": "public_html/wp-content/themes/obspca/index.php",
+					"file": "/srv/http/obspca/wp-config.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1885,
+						"buffer_size": 3426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								985,
-								985
+								1029,
+								1029
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public_html/wp-content/themes/obspca/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1710,
+								1710
 							]
 						],
 						"settings":
@@ -1203,13 +1244,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 232.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1238,7 +1279,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1249,8 +1290,8 @@
 						"selection":
 						[
 							[
-								603,
-								603
+								932,
+								932
 							]
 						],
 						"settings":
@@ -1266,25 +1307,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "public_html/wp-content/themes/obspca/style.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 853,
+						"buffer_size": 729,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								194,
-								194
+								278,
+								278
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1323,7 +1364,7 @@
 		"cols":
 		[
 			0.0,
-			0.527701078177,
+			0.597651113865,
 			1.0
 		],
 		"rows":
@@ -1348,6 +1389,26 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"obspcahead",
+				"wp-content/themes/obspca/header.php"
+			],
+			[
+				"header",
+				"wp-includes/theme-compat/header.php"
+			],
+			[
+				"style",
+				"wp-content/themes/obspca/style.scss"
+			],
+			[
+				"stylescss",
+				"wp-content/themes/obspca/style.scss"
+			],
+			[
+				"stylecss",
+				"wp-content/themes/obspca/style.css"
+			],
 			[
 				"obspfunctions.php",
 				"wp-content/themes/obspca/functions.php"
@@ -1839,26 +1900,6 @@
 			[
 				"shiftform",
 				"app/views/shifts/_form.html.erb"
-			],
-			[
-				"commindex",
-				"app/views/committees/index.html.erb"
-			],
-			[
-				"appjs",
-				"app/assets/javascripts/application.js"
-			],
-			[
-				"comcon",
-				"app/controllers/committees_controller.rb"
-			],
-			[
-				"commrb",
-				"app/models/committee.rb"
-			],
-			[
-				"layapp",
-				"app/views/layouts/application.html.erb"
 			]
 		],
 		"width": 0.0
