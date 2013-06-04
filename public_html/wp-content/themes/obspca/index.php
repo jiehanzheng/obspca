@@ -39,19 +39,27 @@
         <?php query_posts('category_name=featured-pets') ?>
         <?php while (have_posts()): the_post(); ?>
           <li class="media">
-            <?php query_pet(array("animalID" => get_the_title())); ?>
-            <a class="pull-left" href="<?php echo esc_attr(get_the_pet_path()); ?>">
-              <img src="<?php echo esc_attr(get_the_pet_image()); ?>"
-                   class="img-thumbnail" />
-            </a>
-            <div class="media-body">
-              <h4>
-                <a href="<?php echo esc_attr(get_the_pet_path()); ?>">
-                  <?php the_pet_name(); ?>
-                </a>
-              </h4>
-              <?php the_excerpt(); ?>
-            </div>
+            <?php try { ?>
+              <?php query_pet(array("animalID" => get_the_title())); ?>
+              <a class="pull-left" href="<?php echo esc_attr(get_the_pet_path()); ?>">
+                <img src="<?php echo esc_attr(get_the_pet_image()); ?>"
+                     class="img-thumbnail" />
+              </a>
+              <div class="media-body">
+                <h4>
+                  <a href="<?php echo esc_attr(get_the_pet_path()); ?>">
+                    <?php the_pet_name(); ?>
+                  </a>
+                </h4>
+                <?php the_excerpt(); ?>
+              </div>
+            <?php } catch (Exception $e) { ?>
+              <div class="alert alert-danger">
+                <h4>WP-PetPoint error</h4>
+                <strong>An error occurred while fetching animalID #<?php the_title() ?> specified by post #<?php the_ID() ?>:</strong>
+                <?php echo $e->getMessage(); ?>
+              </div>
+            <?php } ?>
           </li>
         <?php endwhile; ?>
       </ul>

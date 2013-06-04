@@ -5,7 +5,8 @@ class PetPoint_API {
   /**
    * API Base, with a trailing slash
    */
-  const API_BASE = "http://www.petango.com/webservices/wsadoption.asmx/";
+  //const API_BASE = "http://www.petango.com/webservices/wsadoption.asmx/"; // prod
+  const API_BASE = "http://qag.petpoint.com/webservices/wsadoption.asmx/"; // dev
 
   /**
    * Cache TTL (in minutes)
@@ -105,12 +106,13 @@ class PetPoint_API {
 
     // parse it
     try {
-      $xml_tree = new SimpleXMLIterator($response);
+      $xml_tree = @new SimpleXMLIterator($response);
     } catch (Exception $e) {
       $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->prefix}petpoint_cache 
                                    WHERE `query` = %s",
                                   $db_fingerprint));
-      throw new Exception("Problem parsing the response from PetPoint.");
+      throw new Exception("Problem parsing the response from PetPoint: " .
+                          $e->getMessage());
     }
 
     if (isset($xml_tree->XmlNode)) { // a list

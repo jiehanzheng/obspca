@@ -1,7 +1,7 @@
-/* LivIcons v1.1 | (c) 2013 DeeThemes | livicons.com */
+/* LivIcons v1.2 | (c) 2013 DeeThemes | livicons.com */
 
 $(document).ready(function(){
-var restsize = 5500,
+var restsize = 6200,
     totalsize = 0;
 
 $(".icon input").each(function(){
@@ -53,6 +53,7 @@ $("#hovertime").inputCtl({minVal: 0, step: 10});
 
 $("#defcolor").minicolors({swatchPosition:"right",theme:"bootstrap",defaultValue:"#333333"});
 $("#defhovercolor").minicolors({swatchPosition:"right",theme:"bootstrap",defaultValue:"#cccccc"});
+$("#defactivecolor").minicolors({swatchPosition:"right",theme:"bootstrap",defaultValue:"#000000"});
 
 $("#result").on("click", function() {
   $("#resultcode").text("");
@@ -72,8 +73,11 @@ $("#result").on("click", function() {
     
     var defnamevalue = namevalues[0],
         defsizevalue = $("#defsize").val(),
-        defmorphdurationvalue = $("#morphtime").val()
-        defhoverdurationvalue = $("#hovertime").val();
+        defmorphdurationvalue = $("#morphtime").val(),
+        defhoverdurationvalue = $("#hovertime").val(),
+        defactiveiconclassvalue = $("#activeicon").val(),
+        defactiveparentclassvalue = $("#activeparent").val(),
+        defactivecolorvalue = $("#defactivecolor").val();
 
     if ($("input:radio[name=iconcolor]:checked").val()==="original") {
       var defcolorvalue = "original";
@@ -95,7 +99,7 @@ $("#result").on("click", function() {
         restcode = $("#restcode").text();
 
     $("#resultcode").text(
-      ';var dN="'+defnamevalue+'",dS='+defsizevalue+',dC="'+defcolorvalue+'",dHC="'+defhovercolorvalue+'",dCCOH='+defchangecoloronhovervalue+',dET="'+defeventtypevalue+'",dA='+defanimatedvalue+',dL='+defloopedvalue+',dOP='+defonparentvalue+',mD='+defmorphdurationvalue+',hD='+defhoverdurationvalue+',lDataI=JSON.stringify('+customdata+');'+'\r\n'+restcode);
+      ';jQuery(document).ready(function(){var dN="'+defnamevalue+'",dS='+defsizevalue+',dC="'+defcolorvalue+'",dHC="'+defhovercolorvalue+'",dCCOH='+defchangecoloronhovervalue+',dET="'+defeventtypevalue+'",dA='+defanimatedvalue+',dL='+defloopedvalue+',dOP='+defonparentvalue+',mD='+defmorphdurationvalue+',hD='+defhoverdurationvalue+',aC="'+defactiveiconclassvalue+'",aPC="'+defactiveparentclassvalue+'",dAC="'+defactivecolorvalue+'",lDI=JSON.stringify('+customdata+'),'+restcode);
     $("#errinfo").css("display", "none");
     $("#resultinfo").css("display", "block");
   } else {

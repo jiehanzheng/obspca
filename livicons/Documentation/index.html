@@ -22,6 +22,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/raphael-min.js"></script>
   <script src="js/livicons-help.min.js"></script>
+  
   <script>
     var shiftWindow = function() { scrollBy(0, -50) };
     window.addEventListener("hashchange", shiftWindow);
@@ -39,9 +40,6 @@ Short notation:
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="livicon" data-n="responsive-menu" data-s="32" data-color="#fff" data-hc="0"></span>
-        </button>
         <a class="brand" href="#main"><i class="livicon" data-n="livicon" data-s="20" data-c="#872632" data-hc="0"></i> LivIcons</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
@@ -55,6 +53,7 @@ Short notation:
                 <li class="divider"></li>
                 <li><a href="#defvalues">Default Values</a></li>
                 <li><a href="#dataattrs">Data Attributes</a></li>
+                <li><a href="#viajs">Via JavaScript</a></li>
                 <li><a href="#shadows">Shadows</a></li>
                 <li><a href="#spinners">Spinners</a></li>
                 <li><a href="#morphs">Morphs</a></li>
@@ -72,16 +71,16 @@ Short notation:
 <div class="container">
   <div class="section" id="main">
     <div class="row">
-      <div class="span12"><h2 class="page-header">&ldquo;LivIcons&rdquo; Documentation by &ldquo;DeeThemes&rdquo; v1.1.1</h2></div>
+      <div class="span12"><h2 class="page-header">&ldquo;LivIcons&rdquo; Documentation by &ldquo;DeeThemes&rdquo; v1.2</h2></div>
     </div>
     <div class="row">
       <div class="span4">
         <div class="well">
           <address>
             <strong>Created: April, 26, 2013<br>
-            Updated: May, 05, 2013<br>
+            Updated: May, 19, 2013<br>
             By: DeeThemes<br>
-            Email: <a href="mailto:dee@livicons.com">dee@livicons.com</a></strong>
+            Contact: <a href="http://codecanyon.net/user/DeeThemes#contact">profile's form</a></strong>
           </address>
         </div>
       </div>
@@ -100,10 +99,24 @@ Short notation:
     </div>
     <div class="row">
       <div class="span1">
-        <i class="livicon" data-n="livicon" data-s="64" data-c="#333" data-hc="0"></i>
+        <div class="livicon" data-n="livicon" data-s="64" data-c="#333" data-hc="0"></div>
       </div>
       <div class="span11">
         <p>As you see Livicons are animated vector icons (except brand names ones), so there are not any images like JPGs, PNGs or GIFs. All their appearance and behaviour are based on Javascript program code. So they can be animated or static, with any color and size with good look at usual and high resolution devices. Livicons are being created with SVG (Scalable Vector Graphic) in all modern browsers and VML (Vector Markup Language) in IE6 - IE8. Their integration is not difficult.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12"><h3 class="page-header">What's new in v1.2</h3></div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <p>Added 65 new animated icons.</p>
+        <p>Added the ability to work with icons dynamically via three new JS methods.</p>
+        <p>Added support for changing the color for the 'active' class of icons or their parents' elements.</p>
+      </div>
+      <div class="span6">
+        <p>Now script will not override the IDs which you define for element with class <code>.livicon</code>.</p>
+        <p>Some code improvement for hiding variables from global namespace and preventing SVG rendering bugs in Firefox and IE9.</p>
       </div>
     </div>
   </div>
@@ -115,13 +128,13 @@ Short notation:
     <div class="row">
       <div class="span4">
         <p>First of all upload to your hosting these JS files: <code>jquery-1.9.1.min.js</code> (if you don't use it already), <code>raphael-min.js</code> and <code>livicons-1.0.min.js</code> (or file that you prepeared with 'LivIcons Customizer', which is described below). After that you need to declare these JS files in a <code>&lt;head></code> section or before closing <code>&lt;/body></code> tag in your HTML one.</p>
-        <p>Note: Min. needed version of jQuery is 1.6.3</p>
+        <p><strong>Note:</strong> Min. needed version of jQuery is 1.6.3</p>
       </div>
       <div class="span8">
         <p>For example:</p>
           <pre class="prettyprint linenums">&lt;script src="jquery-1.9.1.min.js">&lt;/script>
 &lt;script src="raphael-min.js">&lt;/script>
-&lt;script src="livicons-1.0.min.js">&lt;/script></pre>
+&lt;script src="livicons-1.2.min.js">&lt;/script></pre>
         <p>If you want LivIcons work in IE6 - IE7 upload <code>json2.min.js</code> and add the following code in your <code>&lt;head></code> section:</p>
           <pre class="prettyprint linenums">&lt;!--[if lt IE 8]>
   &lt;script src="json2.min.js">&lt;/script>
@@ -160,14 +173,24 @@ Short notation:
       <div class="span12"><h3 class="page-header">How to use</h3></div>
     </div>
     <div class="row">
+      <div class="span12"><h4>Via HTML</h4></div>
+    </div>
+    <div class="row">
       <div class="span12">
         <p>Add to your html code a <code>&lt;div></code>, <code>&lt;span></code>, <code>&lt;li></code> or <code>&lt;i></code> with class <code>.livicon</code> and define necessary <code>data-</code> attributes. Every icon on page can get ten (10) (since v1.1) <code>data-</code> attributes, which set its behaviour and appearance. But don't be affraid you do not always need to define all these parameters.</p>
         <p><strong>The main:</strong> for the most icons on your website you specify the default settings in the script code itself. This can be done in two ways. The first is to change default values ​​of the variables in your LivIcons script. Second, to use the Customizer, which is more easier and comfortable. Working with the last one is described below.</p>
         <p>After that if you want that any icon should have another size, color, animation iterations, speed, etc. you should set its individual <code>data-</code> attributes.</p>
-        <p><strong>And that's all!</strong></p>
+        <p>And that's all!</p>
       </div>
     </div>
-
+    <div class="row">
+      <div class="span12"><h4>Via Javascript (from v1.2)</h4></div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <p>Now there are three new methods: <code>.addLivicon()</code>, <code>.removeLivicon()</code> and <code>updateLivicon()</code>. So you can add, delete, update any icons "on the fly". Detail explanation is below.</p>
+      </div>
+    </div>
     <div class="row" id="defvalues">
       <hr>
       <div class="span12"><h4>1. Setting default values</h4></div>
@@ -200,13 +223,37 @@ Short notation:
     morphduration = 200,          // transition time for morph 
                                   // icons (milliseconds)
     hoverduration = 200;          // transition time for changing 
-                                  // color on hover (milliseconds)</pre>
+                                  // color on hover (milliseconds)
+    activeclass = "activeicon",   // name of the class for active state
+                                  // of icons (new in v1.2)
+    activeparentclass = "active", //name of the parent's class for active
+                                  // state of icons (new in v1.2)
+    defactivecolor = "red";       //default color for active state class 
+                                  // (#XXX or #XXXXXX or ex. 'red')-new in v1.2</pre>
+
         <p>All of these options will affect the behavior of the all icons by default. The comments above quite explain the effect of each parameter. One thing needed to explain separately is color value set to 'original'. It means that script takes colors from itself code. Socials icons and others such of them have their own colors, rest of icons set the color value to '#333'.</p>
         <p>So if you stay defaults as above and put livicon's call in your HTML file like this:</p>
         <p><code>&lt;i class="livicon" data-name="tag">&lt;/i></code>, you will get this icon: <i class="livicon" data-name="tag"></i></p>
       </div>
     </div>
     
+    <div class="row">
+      <div class="span4">
+        <p>'Active' state of icons (new in v1.2).</p>
+        </div>
+      <div class="span8">
+        <p>From now you can define the color changing for 'active' state of icons. If you add class <code>activeicon</code> (or any name which you can define with the Customizer) to element where a livicon will appear or add class <code>active</code> (or any name which you can define with the Customizer) to a parent element which contains a livicon, then the color will change to a value defined in the variable <code>defactivecolor</code>.</p>
+        <pre class="prettyprint linenums">&lt;i class="livicon activeicon" data-name="check-circle-alt" data-color="blue">&lt;/i></pre>
+        <p>The result ('red' not 'blue'): <i class="livicon activeicon" data-n="check-circle-alt" data-color="blue"></i></p>
+        <pre class="prettyprint linenums">&lt;div class="parent active">
+  &lt;i class="livicon" data-name="check-circle-alt" data-color="blue">&lt;/i>
+&lt;/div></pre>
+        <p>The result ('red' not 'blue'): <div class="active"><i class="livicon" data-n="check-circle-alt" data-color="blue"></i></div></p>
+        <p>If you need or want to change color without reloding a page, you can do that by something like this:</p>
+        <pre class="prettyprint linenums">$('#my_cool_icon').addClass('activeicon').updateLivicon();</pre>
+      </div>
+    </div>
+
     <div class="row" id="dataattrs">
       <hr>
       <div class="span12"><h4>2. Individual Data Attributes</h4></div>
@@ -219,7 +266,7 @@ Short notation:
       </div>
       <div class="span8">
         <div class="alert alert-info">
-          <i class="livicon" data-s="16" data-n="info" data-c="#3A87AD" data-hc="0" data-op="1"></i> Please keep  in mind that any <code>data-...</code> attribute has the highest priority for a corresponding icon and will override the global defaults parameters.<br> So you need specify this attributes only if you want to change default options exactly for one icon.  
+          <i class="livicon" data-s="16" data-n="info" data-c="#3A87AD" data-hc="0" data-op="1"></i> Please keep  in mind that any <code>data-...</code> attribute has a higher priority for a corresponding icon and will override the global defaults parameters.<br> So you need specify this attributes only if you want to change default options exactly for one icon.  
         </div>
         <p>Full notation:</p>
         <pre class="prettyprint linenums">&lt;span class="livicon"
@@ -250,7 +297,7 @@ Short notation:
         <p>Of course you can write that in one string:</p>
         <pre class="prettyprint linenums">&lt;span class="livicon" data-n="tag" data-s="32" data-c="original" data-hc="#000" data-a="1" data-l="0" data-i="3" data-d="0" data-et="hover" data-op="0">&lt;/span></pre>
         <p>The result of executing the code above will be: <span class="livicon" data-n="tag" data-s="32" data-c="original" data-hc="#000" data-a="1" data-l="0" data-i="3" data-d="0" data-et="hover" data-op="0"></span></p>
-        <p>Let's take a closer look at each attribute.</p>
+        <p>Let's take a closer look at an each attribute.</p>
       </div>
     </div>
 
@@ -350,7 +397,6 @@ Short notation:
     <div class="row">
       <hr>
       <div class="span4">
-        <h4>New in v1.1</h4>
         <p><code>data-duration</code> or <code>data-d</code></p>
         <p>Define the duration of animation (in ms)</p>
         <p>In a LivIcons script every icon has its own animation's speed based on my opinion. But if you feel that animation should be slower or faster you can play with this option.</p> 
@@ -386,9 +432,62 @@ Short notation:
       </div>
     </div>
 
+        <div class="row" id="viajs">
+      <hr>
+      <div class="span12"><h4>3. Working dynamically via JavaScript</h4></div>
+    </div>
+    <div class="row">
+      <div class="span4">
+        <p>From v1.2 there is the ability to work with icons dynamically via three JS methods. These methods are <code>.addLivicon()</code>, <code>updateLivicon()</code> and <code>.removeLivicon()</code>. The first two ones can get options which are equal to data attributes <code>data-...</code> explained above. The last method can get only one option - <code>'total'</code>.</p>
+        <p>For two methods options can be passed in two notations: full and short.</p>
+        <p>Now you even not always need class <code>livicon</code> to draw a desired icon.</p>
+      </div>
+      <div class="span8">
+        <div class="alert alert-info">
+          <i class="livicon" data-s="16" data-n="info" data-c="#3A87AD" data-hc="0" data-op="1"></i> Please keep in mind that any options passed to a method has the highest priority for a corresponding icon and will override the global defaults and any same <code>data-...</code> attributes.
+        </div>
+        <p>Example of usage in full notation for ex. <code>.addLivicon()</code>:</p>
+        <pre class="prettyprint linenums">$('#my_cool_icon').addLivicon({
+  name : "comment",
+  size : 32,
+  color : "original",
+  hovercolor : "#000",
+  animate : "true",
+  loop : false,
+  iteration : 3,
+  duration : 700,
+  eventtype : "hover",
+  onparent : false
+  });</pre>
+        <p>Example of usage in short notation for ex. <code>.updateLivicon()</code>:</p>
+        <pre class="prettyprint linenums">$('#my_cool_icon').updateLivicon({
+  n : "comments", //you can change the icon itself
+  s : 48,
+  c : "blue",
+  hc : "red",
+  a : "true",
+  l : false,
+  i : 3,
+  d : 700,
+  et : "click",
+  op : false
+  });</pre>
+        <p>Of course you can write that in one string:</p>
+        <pre class="prettyprint linenums">$('#my_cool_icon').addLivicon({ name : "comment", size : 32, color : "original", hovercolor : "#000", animate : "true", loop : false, iteration : 3, duration : 700, eventtype : "hover", onparent : false });</pre>
+        <p>If any of the above parameters are omitted, the script will take values from data attributes and (or) from the default settings.</p>
+        <br>
+        <p><code>.removeLivicon()</code> method can work in two ways:</p>
+        <p>Without an option</p>
+        <pre class="prettyprint linenums">$('#my_cool_icon').removeLivicon();</pre>
+        <p>it will delete SVG or VML code from a choosen element (we can say that we clear a canvas).</p>
+        <p>With option <code>'total'</code> it removes from the DOM the element itself. In the next example the element <code>#my_cool_icon</code> will be destroyed completely after execution:</p>
+        <pre class="prettyprint linenums">$('#my_cool_icon').removeLivicon('total');</pre>
+      </div>
+    </div>
+
     <div class="row" id="shadows">
       <hr>
-      <div class="span12"><h4>3. Shadows</h4></div>
+      <div class="span12"><h4>4. Shadows</h4></div>
     </div>
     <div class="row">
       <div class="span4">
@@ -411,7 +510,7 @@ Short notation:
 
     <div class="row" id="spinners">
       <hr>
-      <div class="span12"><h4>4. Spinners</h4></div>
+      <div class="span12"><h4>5. Spinners</h4></div>
     </div>
     <div class="row">
       <div class="span4">
@@ -440,7 +539,7 @@ Short notation:
 
     <div class="row" id="morphs">
       <hr>
-      <div class="span12"><h4>5. Morphs</h4></div>
+      <div class="span12"><h4>6. Morphs</h4></div>
     </div>
     <div class="row">
       <div class="span4">
@@ -470,7 +569,7 @@ Short notation:
     </div>
     <div class="row">
       <div class="span1">
-        <i class="livicon" data-n="wrench" data-s="64" data-hc="0"></i>
+        <i class="livicon" data-n="wrench" data-s="64" data-hc="0" data-c="#333"></i>
       </div>
       <div class="span11">
         <p>With the customizer included in the package you can simply and fast choose what icons you need for your project and get the compact code.</p>
@@ -491,7 +590,7 @@ Short notation:
     </div>
     <div class="row">
       <div class="span1">
-        <i class="livicon" data-n="doc-portrait" data-s="64" data-hc="0"></i>
+        <i class="livicon" data-n="doc-portrait" data-s="64" data-hc="0" data-c="#333"></i>
       </div>
       <div class="span11">
         <p>For your design purpose I've included all LivIcons shapes in vector format AI files. This files are saved in CS2, CS3, CS4, CS5, CS6 formats. The content is the same.</p>
@@ -505,14 +604,14 @@ Short notation:
     </div>
     <div class="row">
       <div class="span1">
-        <i class="livicon" data-n="users" data-s="64" data-hc="0"></i>
+        <i class="livicon" data-n="users" data-s="64" data-hc="0" data-c="#333"></i>
       </div>
       <div class="span11">
         <ul class="unstyled">
-          <li><i class="livicon" data-n="check" data-s="16" data-op="1"></i> Special thanks to <a href="http://dmitry.baranovskiy.com">Dmitry Baranovskiy</a>, the author of <a href="http://raphaeljs.com">Raphaël - JavaScript Library</a>.</li>
-          <li><i class="livicon" data-n="check" data-s="16" data-op="1"></i> Special thanks to <a href="http://jquery.com">jQuery</a> team for outstanding work makes our job easier.<li>
-          <li><i class="livicon" data-n="check" data-s="16" data-op="1"></i> Special thanks to Douglas Crockford for <a href="http://www.JSON.org/js.html">json2 script</a>, which lets IE6 -IE7 to work with JSON format.<li>
-          <li><i class="livicon" data-n="check" data-s="16" data-op="1"></i> Some icons are based on pictograms from various open sources with appropriate license for commercial use, modify and alter with no attribution required.</li>
+          <li><i class="livicon" data-n="check" data-s="16" data-a="0" data-c="#333"></i> Special thanks to <a href="http://dmitry.baranovskiy.com">Dmitry Baranovskiy</a>, the author of <a href="http://raphaeljs.com">Raphaël - JavaScript Library</a>.</li>
+          <li><i class="livicon" data-n="check" data-s="16" data-a="0" data-c="#333"></i> Special thanks to <a href="http://jquery.com">jQuery</a> team for outstanding work makes our job easier.<li>
+          <li><i class="livicon" data-n="check" data-s="16" data-a="0" data-c="#333"></i> Special thanks to Douglas Crockford for <a href="http://www.JSON.org/js.html">json2 script</a>, which lets IE6 -IE7 to work with JSON format.<li>
+          <li><i class="livicon" data-n="check" data-s="16" data-a="0" data-c="#333"></i> Some icons are based on pictograms from various open sources with appropriate license for commercial use, modify and alter with no attribution required.</li>
         </ul>
       </div>
     </div>
@@ -524,8 +623,6 @@ Short notation:
       <p class="well">Once again, thank you so much for purchasing this item. As I said at the beginning, I'd be glad to help you if you have any questions relating to this package. No guarantees, but I'll do my best to assist. If you have a more general question relating to LivIcons, you might contact me via my user page contact form <a href="http://codecanyon.net/user/DeeThemes">here</a>. And again if you like these animated icons please rate them with <i class="livicon" data-n="star-full" data-s="16" data-c="#D7A400" data-op="0" data-hc="#FFC400"></i><i class="livicon" data-n="star-full" data-s="16" data-c="#D7A400" data-op="0" data-hc="#FFC400"></i><i class="livicon" data-n="star-full" data-s="16" data-c="#D7A400" data-op="0" data-hc="#FFC400"></i><i class="livicon" data-n="star-full" data-s="16" data-c="#D7A400" data-op="0" data-hc="#FFC400"></i><i class="livicon" data-n="star-full" data-s="16" data-c="#D7A400" data-op="0" data-hc="#FFC400"></i>. Thanks You!<br><br><strong>Best regards,<br>Dee</strong></p>
     </div>
   </div>
-  
-
 
 </div><!--end .container-->
 

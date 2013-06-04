@@ -40,8 +40,8 @@ body {
     }
 
     img {
-      height: 100%;
-      max-width: none !important;
+      min-height: 100%;
+      max-width: 1170px;
     }
 	}
 
@@ -69,6 +69,17 @@ body {
 
   .dl-horizontal dd {
     margin-left: 130px;
+  }
+}
+
+
+.page {
+  #pet_media {
+    .carousel {
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 

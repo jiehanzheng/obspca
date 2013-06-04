@@ -1,4 +1,16 @@
-/* LivIcons v1.1.1 | (c) 2013 DeeThemes | livicons.com */
+/* LivIcons v1.2 | (c) 2013 DeeThemes | livicons.com */
+
+v1.2
+2013, May, 19
+- added 65 new animated icons
+- added the ability to work with icons dynamically via three new JavaScript methods
+- added support for changing the color for the 'active' class of icons or their parents' elements
+- from now script will not override the IDs which you define for element with class "livicon"
+- made some code improvement for hiding variables from global namespace and preventing SVG rendering bugs in Firefox and IE9
+- updated the documentation
+- updated the Customizer
+- updated Adobe Illustrator files
+
 
 v1.1.1
 2013, May, 05
@@ -9,7 +21,7 @@ v1.1
 - removed all animations from 'brand names' icons, because these animations may violate terms of service of respective copyright owners
 - removed 'twitter-alt-alt' icon
 - added ten new icons
-- added new 'data-duration' or 'data-d' parameter for changing animation speed.
+- added new 'data-duration' or 'data-d' parameter for changing animation speed
 - updated the documentation
 - updated the Customizer
 - updated Adobe Illustrator files

@@ -94,7 +94,10 @@ function get_the_pet_name() {
 function the_pet_name() { echo esc_html(get_the_pet_name()); }
 
 
-function the_pet_has_images() {}
+function the_pet_has_images() {
+  global $petpoint;
+  return (boolean) $petpoint->get_image();
+}
 
 
 function get_the_pet_image() {
@@ -102,6 +105,20 @@ function get_the_pet_image() {
   return $petpoint->get_image();
 }
 function the_pet_image() { echo esc_html(get_the_pet_image()); }
+
+
+function get_the_pet_image2() {
+  global $petpoint;
+  return $petpoint->get_image2();
+}
+function the_pet_image2() { echo esc_html(get_the_pet_image2()); }
+
+
+function get_the_pet_image3() {
+  global $petpoint;
+  return $petpoint->get_image3();
+}
+function the_pet_image3() { echo esc_html(get_the_pet_image3()); }
 
 
 function get_the_pet_species() {
