@@ -1,20 +1,8 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains footer content and the closing of the
- * #main and #page div elements.
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-?>
 </div><!-- .container -->
   
 <div id="footer">
   <div class="container">
-    <div class="span4">
+    <div class="col col-lg-4">
       <h4>Operation Hours</h4>
       <dl class="dl-horizontal">
         <dt>Monday&ndash;Friday</dt>
@@ -25,7 +13,7 @@
         <dd>11:00 AM&ndash;2:00 PM</dd>
       </dl>
     </div>
-    <div class="span4">
+    <div class="col col-lg-4">
       <h4>Adoption Hours</h4>
       <dl class="dl-horizontal">
         <dt>Monday&ndash;Friday</dt>
@@ -36,7 +24,7 @@
         <dd>11:00 AM&ndash;2:00 PM</dd>
       </dl>
     </div> 
-    <div class="span4">
+    <div class="col col-lg-4">
       <h4>Outer Banks SPCA</h4>
       <address>
         1031 Driftwood Drive<br>

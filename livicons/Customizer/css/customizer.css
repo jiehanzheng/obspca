@@ -1,0 +1,50 @@
+body{
+	padding: 20px 0;
+}
+.page-header {
+  color: #872632;
+  border-bottom: 3px solid #872632;
+}
+h3.page-header {
+  color: #872632;
+  border-bottom: 1px solid #872632;
+}
+.icon {
+  float: left;
+  margin: 0 10px 20px 10px;
+  width: 114px;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fafafa;
+  font-size: 12px;
+}
+.icon .checkbox {
+	margin-top: 0px;
+}
+.livicon {
+	vertical-align: middle;
+	margin: 0 auto 10px;
+}
+#errinfo .livicon, .lead .livicon {
+	display: inline-block;
+	margin: 0 10px 0 0;
+}
+
+.checkedsummary, .sizesummary {
+	padding-top: 5px;
+}
+.inputCtl button {
+	margin-top: -3px;
+}
+.bytessize {
+	font-size: 11px;
+	font-style: italic;
+	color: #6D6D6D;
+}
+#restcode, #errinfo, #resultinfo {
+	display: none;
+}

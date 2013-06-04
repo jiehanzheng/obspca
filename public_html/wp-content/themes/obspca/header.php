@@ -8,17 +8,13 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <!--[if lt IE 9]>
-  <script src="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/js/html5shiv.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/js/html5shiv.js" type="text/javascript"></script>
   <![endif]-->
 
-  <link href="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-  
   <!--[if lt IE 8]>
     <script src="<?php echo get_template_directory_uri(); ?>/vendor/livicons/js/json2.min.js"></script>
   <![endif]-->
-  <script src="<?php echo get_template_directory_uri(); ?>/vendor/livicons/js/raphael-min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/vendor/livicons/js/livicons-1.1.1.min.js"></script>
-
+  
   <?php wp_head(); ?>
 </head>
 
@@ -27,11 +23,12 @@
     <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" 
        title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" 
        rel="home">
-      <div class="visible-phone">
+      <div class="visible-sm">
         <?php bloginfo('name'); ?>
       </div>
-      <div id="fixed_logo" class="hidden-phone">
-        <img src="<?php echo get_template_directory_uri() ?>/images/navbar-logo.png" />
+      <div id="fixed_logo" class="hidden-sm">
+        <img src="<?php echo get_template_directory_uri() ?>/images/navbar-logo.png"
+             alt="Logo for <?php echo esc_attr(get_bloginfo('name', 'display')); ?>" />
       </div>
     </a>
 
@@ -51,7 +48,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="span12">
+      <div class="col">
         <?php query_posts('category_name=announcements') ?>
         <?php while (have_posts()): the_post(); ?>
           <div class="alert alert-error">
@@ -69,5 +66,5 @@
           </div>
         <?php endwhile; ?>
         <?php wp_reset_query(); ?>
-      </div><!-- .span12 -->
+      </div><!-- .col -->
     </div><!-- .row -->

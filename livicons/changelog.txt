@@ -1,0 +1,19 @@
+/* LivIcons v1.1.1 | (c) 2013 DeeThemes | livicons.com */
+
+v1.1.1
+2013, May, 05
+- small bug fix for IE6 - IE8
+
+v1.1
+2013, May, 04
+- removed all animations from 'brand names' icons, because these animations may violate terms of service of respective copyright owners
+- removed 'twitter-alt-alt' icon
+- added ten new icons
+- added new 'data-duration' or 'data-d' parameter for changing animation speed.
+- updated the documentation
+- updated the Customizer
+- updated Adobe Illustrator files
+
+
+v1.0
+2013, May, 01 - initial release

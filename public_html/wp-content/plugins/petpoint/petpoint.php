@@ -8,7 +8,7 @@ Author URI: http://jiehan.org/
 License: MIT
 */
 
-require 'petpoint-api.php';
+require 'api.php';
 
 
 function petpoint_install() {
@@ -76,7 +76,7 @@ function the_pet_debug() {
 
 function get_the_pet_path() {
   global $petpoint;
-  return "/pets?animalID=" . get_the_pet_id();
+  return "/pet?animalID=" . get_the_pet_id();
 }
 
 

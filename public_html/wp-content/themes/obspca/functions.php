@@ -27,21 +27,17 @@ add_action( 'after_setup_theme', 'obspca_setup' );
  */
 function obspca_scripts_styles() {
   /*
-   * Adds JavaScript to pages with the comment form to support
-   * sites with threaded comments (when in use).
+   * Loads our main stylesheet
    */
-  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-    wp_enqueue_script( 'comment-reply' );
-
-  /*
-   * Loads our main stylesheet.
-   */
+  wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css' );
   wp_enqueue_style( 'obspca-style', get_stylesheet_uri() );
 
   /*
    * Bootstrap components
    */
   wp_enqueue_script('jquery');
+  wp_enqueue_script('raphael', get_template_directory_uri() . '/vendor/livicons/js/raphael-min.js');
+  wp_enqueue_script('livicons', get_template_directory_uri() . '/vendor/livicons/js/livicons-1.1.1.min.js', array('raphael', 'jquery'));
   wp_enqueue_script('bootstrap-transition', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-transition.js');
   wp_enqueue_script('bootstrap-carousel', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-carousel.js');
   wp_enqueue_script('bootstrap-dropdown', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-dropdown.js');
@@ -231,7 +227,7 @@ if ( ! function_exists( 'twentytwelve_entry_meta' ) ) :
  *
  * @since Twenty Twelve 1.0
  */
-function twentytwelve_entry_meta() {
+function obspca_entry_meta() {
   // Translators: used between list items, there is a space after the comma.
   $categories_list = get_the_category_list( __( ', ', 'twentytwelve' ) );
 

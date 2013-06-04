@@ -1,0 +1,1 @@
+AI files are not changed in v1.1.1 because there was made a small bug fix for IE6 - IE8 in the script itself.
