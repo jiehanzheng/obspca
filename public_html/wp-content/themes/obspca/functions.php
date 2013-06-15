@@ -50,9 +50,9 @@ add_action( 'wp_enqueue_scripts', 'obspca_scripts_styles' );
  * Alter the main loop on homepage to make it get News only
  */
 function obspca_alter_homepage_query($query) {
-    if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set('category_name', 'news');
-    }
+  if ( $query->is_home() && $query->is_main_query() ) {
+    $query->set('category_name', 'news');
+  }
 }
 add_action('pre_get_posts', 'obspca_alter_homepage_query');
 
@@ -268,63 +268,18 @@ endif;
 
 
 /**
- * Extends the default WordPress body class to denote:
- * 1. Using a full-width layout, when no active widgets in the sidebar
- *    or full-width template.
- * 2. Front Page template: thumbnail in use and number of sidebars for
- *    widget areas.
- * 3. White or empty background color to change the layout and spacing.
- * 4. Custom fonts enabled.
- * 5. Single or multiple authors.
- *
- * @since Twenty Twelve 1.0
- *
- * @param array Existing class values.
- * @return array Filtered class values.
- */
-function twentytwelve_body_class( $classes ) {
-  $background_color = get_background_color();
-
-  if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
-    $classes[] = 'full-width';
-
-  if ( is_page_template( 'page-templates/front-page.php' ) ) {
-    $classes[] = 'template-front-page';
-    if ( has_post_thumbnail() )
-      $classes[] = 'has-post-thumbnail';
-    if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) )
-      $classes[] = 'two-sidebars';
-  }
-
-  if ( empty( $background_color ) )
-    $classes[] = 'custom-background-empty';
-  elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
-    $classes[] = 'custom-background-white';
-
-  // Enable custom font class only if the font CSS is queued to load.
-  if ( wp_style_is( 'twentytwelve-fonts', 'queue' ) )
-    $classes[] = 'custom-font-enabled';
-
-  if ( ! is_multi_author() )
-    $classes[] = 'single-author';
-
-  return $classes;
-}
-add_filter( 'body_class', 'twentytwelve_body_class' );
-
-/**
  * Adjusts content_width value for full-width and single image attachment
  * templates, and when there are no active widgets in the sidebar.
  *
  * @since Twenty Twelve 1.0
  */
-function twentytwelve_content_width() {
+function obspca_content_width() {
   if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
     global $content_width;
     $content_width = 960;
   }
 }
-add_action( 'template_redirect', 'twentytwelve_content_width' );
+add_action( 'template_redirect', 'obspca_content_width' );
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.

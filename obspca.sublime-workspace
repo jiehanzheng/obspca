@@ -523,7 +523,7 @@
 			"file": "public_html/wp-content/plugins/petpoint/petpoint.php",
 			"settings":
 			{
-				"buffer_size": 4453,
+				"buffer_size": 4831,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "public_html/wp-content/plugins/petpoint/api.php",
 			"settings":
 			{
-				"buffer_size": 5993,
+				"buffer_size": 6132,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,15 +547,7 @@
 			"file": "public_html/wp-content/themes/obspca/functions.php",
 			"settings":
 			{
-				"buffer_size": 17647,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public_html/wp-content/themes/obspca/header.php",
-			"settings":
-			{
-				"buffer_size": 2615,
+				"buffer_size": 16102,
 				"line_ending": "Unix"
 			}
 		},
@@ -568,12 +560,11 @@
 			}
 		},
 		{
-			"contents": "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=obspca@embarqmail.com&amount=5&item_name=General+donation",
+			"file": "public_html/wp-content/themes/obspca/header.php",
 			"settings":
 			{
-				"buffer_size": 119,
-				"line_ending": "Unix",
-				"name": "https://www.paypal.com/cgi-bin/webscr?cmd=_donatio"
+				"buffer_size": 2615,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -588,15 +579,7 @@
 			"file": "public_html/wp-content/themes/obspca/page-templates/pet.php",
 			"settings":
 			{
-				"buffer_size": 1549,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public_html/wp-content/themes/obspca/page-templates/pets.php",
-			"settings":
-			{
-				"buffer_size": 0,
+				"buffer_size": 3199,
 				"line_ending": "Unix"
 			}
 		},
@@ -612,7 +595,7 @@
 			"file": "public_html/wp-content/themes/obspca/index.php",
 			"settings":
 			{
-				"buffer_size": 4504,
+				"buffer_size": 4920,
 				"line_ending": "Unix"
 			}
 		},
@@ -634,10 +617,13 @@
 			}
 		},
 		{
+			"contents": "/*\nTheme Name: Outer Banks SPCA\nAuthor: jiehanzheng\nAuthor URI: http://jiehan.org/\nVersion: 0.1\nText Domain: obspca \n*/\n\n\nbody {\n  color: #5a5a5a;\n  padding-top: 70px;\n}\n\n\n.navbar {\n  #fixed_logo {\n    width: 200px;\n\n    img {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 200px;\n    }\n  }\n}\n\n\n.home {\n	.carousel {\n		max-width: 1170px;\n		height: 280px;\n		overflow: hidden;\n\n		margin: {\n      right: auto;\n		  left: auto;\n      bottom: 20px;\n    }\n\n    img {\n      min-height: 100%;\n      max-width: 1170px;\n    }\n	}\n\n  #featured_pets {\n    img {\n      width: 100px;\n    }\n  }\n\n  #help_us {\n    address {\n      margin-bottom: 0;\n    }\n  }\n}\n\n\n#footer {\n  background-color: #f5f5f5;\n  padding: 20px 0;\n\n  .dl-horizontal dt {\n    width: 110px;\n  }\n\n  .dl-horizontal dd {\n    margin-left: 130px;\n  }\n}\n\n\n.page {\n  #pet_media {\n    .carousel {\n      img {\n        width: 100%;\n      }\n    }\n  }\n}\n\n\n.livicon {\n  display: inline-block;\n  line-height: inherit;\n  vertical-align: middle;\n}\n\n// WordPress recommendation\n// from http://codex.wordpress.org/Content_Width\n.size-auto, \n.size-full,\n.size-large,\n.size-medium,\n.size-thumbnail {\n  max-width: 100%;\n  height: auto;\n}\n",
 			"file": "public_html/wp-content/themes/obspca/style.scss",
+			"file_size": 1112,
+			"file_write_time": 130149341553372838,
 			"settings":
 			{
-				"buffer_size": 915,
+				"buffer_size": 1189,
 				"line_ending": "Unix"
 			}
 		},
@@ -787,6 +773,7 @@
 	},
 	"file_history":
 	[
+		"/home/jiehan/workspace/obspca/public_html/wp-content/themes/obspca/page-templates/pets.php",
 		"/home/jiehan/workspace/obspca/public_html/wp-includes/theme-compat/footer.php",
 		"/home/jiehan/workspace/obspca/public_html/index.php",
 		"/home/jiehan/workspace/obspca/public_html/wp-includes/theme-compat/header.php",
@@ -913,8 +900,7 @@
 		"/home/jiehan/workspace/peddie_communityservice/spec/features/user_permissions_spec.rb",
 		"/home/jiehan/workspace/peddie_communityservice/spec/features/time_limits_spec.rb",
 		"/home/jiehan/workspace/peddie_communityservice/spec/spec_helper.rb",
-		"/home/jiehan/workspace/peddie_communityservice/spec/features/counting_mechanism_spec.rb",
-		"/home/jiehan/workspace/peddie_communityservice/app/views/signups/_form.html.erb"
+		"/home/jiehan/workspace/peddie_communityservice/spec/features/counting_mechanism_spec.rb"
 	],
 	"find":
 	{
@@ -933,6 +919,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"twentytwelve_content_width",
+			"image2",
+			"carousel-example-generic",
+			"p",
 			"col-lg-1 col-sm-1",
 			"col-lg-1",
 			"col-span-1",
@@ -1056,11 +1046,7 @@
 			"time",
 			"jiehan_kane_s2",
 			"jiehan_jiehan_s2",
-			"0",
-			"Process",
-			"process",
-			"analyzer",
-			"analyzer_finished"
+			"0"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1091,7 +1077,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1100,15 +1086,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4453,
+						"buffer_size": 4831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								261,
-								261
+								1978,
+								1978
 							]
 						],
 						"settings":
@@ -1119,7 +1105,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1130,15 +1116,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5993,
+						"buffer_size": 6132,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								898,
+								898
 							]
 						],
 						"settings":
@@ -1186,15 +1172,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17647,
+						"buffer_size": 16102,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								940,
-								940
+								761,
+								761
 							]
 						],
 						"settings":
@@ -1204,42 +1190,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "public_html/wp-content/themes/obspca/header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2615,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1806,
-								1806
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "public_html/wp-content/themes/obspca/content.php",
 					"semi_transient": false,
 					"settings":
@@ -1268,34 +1225,36 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
+					"file": "public_html/wp-content/themes/obspca/header.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 119,
+						"buffer_size": 2615,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								119,
-								119
+								2615,
+								2615
 							]
 						],
 						"settings":
 						{
-							"auto_name": "https://www.paypal.com/cgi-bin/webscr?cmd=_donatio",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 322.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "public_html/wp-content/themes/obspca/footer.php",
 					"semi_transient": false,
 					"settings":
@@ -1307,8 +1266,8 @@
 						"selection":
 						[
 							[
-								429,
-								429
+								529,
+								529
 							]
 						],
 						"settings":
@@ -1326,24 +1285,24 @@
 			]
 		},
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "public_html/wp-content/themes/obspca/page-templates/pet.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1549,
+						"buffer_size": 3199,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								876,
-								876
+								2741,
+								2741
 							]
 						],
 						"settings":
@@ -1353,40 +1312,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "public_html/wp-content/themes/obspca/page-templates/pets.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "/srv/http/obspca/wp-config.php",
 					"semi_transient": false,
 					"settings":
@@ -1413,20 +1345,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 9,
 					"file": "public_html/wp-content/themes/obspca/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4504,
+						"buffer_size": 4920,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3317,
-								3317
+								912,
+								912
 							]
 						],
 						"settings":
@@ -1436,13 +1368,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1125.0,
+						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 10,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1471,7 +1403,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 11,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1499,34 +1431,36 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 12,
 					"file": "public_html/wp-content/themes/obspca/style.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 915,
+						"buffer_size": 1189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								212,
-								212
+								911,
+								911
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 786.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 13,
 					"file": "public_html/wp-content/themes/obspca/single.php",
 					"semi_transient": false,
 					"settings":
@@ -1610,6 +1544,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"obsfoot",
+				"wp-content/themes/obspca/footer.php"
+			],
 			[
 				"foot",
 				"wp-includes/theme-compat/footer.php"
@@ -2117,10 +2055,6 @@
 			[
 				"rodu",
 				"config/environments/production.rb"
-			],
-			[
-				"apphelper",
-				"app/helpers/application_helper.rb"
 			]
 		],
 		"width": 0.0
