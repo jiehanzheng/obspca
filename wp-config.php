@@ -15,11 +15,18 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'obspca');
 
-/** MySQL database username */
-define('DB_USER', 'obspca_wp');
+// if not on us1, we are on development machine
+if (in_array(gethostname(), array('us1'))) {
+  define('DB_NAME', 'jiehan_obspca');
+  define('DB_USER', 'jiehan_scripts');
+} else {
+  define('WP_HOME', 'http://localhost');
+  define('WP_SITEURL', 'http://localhost');
+
+  define('DB_NAME', 'obspca');
+  define('DB_USER', 'obspca_wp');
+}
 
 /** MySQL database password */
 define('DB_PASSWORD', '');
@@ -80,12 +87,6 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 define('SAVEQUERIES', false);
-
-// if not on us1, we are on development machine
-if (!in_array(gethostname(), array('us1'))) {
-  define('WP_HOME', 'http://localhost');
-  define('WP_SITEURL', 'http://localhost');
-}
 
 define('FS_METHOD', 'direct');
 
