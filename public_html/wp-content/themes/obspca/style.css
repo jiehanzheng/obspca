@@ -6,16 +6,25 @@ Version: 0.1
 Text Domain: obspca 
 */
 body {
-  color: #5a5a5a;
-  padding-top: 70px; }
+  color: #5a5a5a; }
 
-.navbar #fixed_logo {
-  width: 200px; }
-  .navbar #fixed_logo img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px; }
+.row#logo_row #top_logo_area {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .row#logo_row #top_logo_area img {
+    width: 100%; }
+  .row#logo_row #top_logo_area h1 {
+    margin: 0; }
+.row#logo_row #important_info_area {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .row#logo_row #important_info_area p.lead:last-of-type {
+    margin-bottom: 0; }
+
+.entry-summary time.time_elapsed {
+  font-weight: bold; }
+.entry-summary p {
+  display: inline; }
 
 .home .carousel {
   max-width: 1170px;
@@ -26,7 +35,8 @@ body {
   margin-bottom: 20px; }
   .home .carousel img {
     min-height: 100%;
-    max-width: 1170px; }
+    max-width: 1170px;
+    max-height: 280px; }
 .home #featured_pets img {
   width: 100px; }
 .home #help_us address {
@@ -47,3 +57,11 @@ body {
   display: inline-block;
   line-height: inherit;
   vertical-align: middle; }
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto; }

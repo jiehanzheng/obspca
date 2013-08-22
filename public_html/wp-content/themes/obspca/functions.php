@@ -3,23 +3,68 @@
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
+if (!isset($content_width))
   $content_width = 625;
+
+
+add_action('admin_init', 'obspca_install_categories');
+function obspca_install_categories() {
+  // announcements
+  wp_create_term('Announcements', 'announcement-category');
+  wp_create_term('Information', 'announcement-category');
+}
+
+
+add_action('init', 'obspca_register_post_types');
+function obspca_register_post_types() {
+  // pets
+  register_post_type('pet',
+    array('labels' => array('name'          => 'Pets',
+                            'singular_name' => "Pet"),
+          'description' => 'Objects to store ID links to PetPoint.',
+          'public' => false,
+          'show_ui' => true));
+
+  // homepage featured image
+  register_post_type('homepage-image',
+    array('labels' => array('name'          => 'Homepage Images',
+                            'singular_name' => "Homepage Image"),
+          'description' => 'Images for homepage slider.',
+          'public' => false,
+          'show_ui' => true,
+          'supports' => array('post-formats', 'editor', 'title') ));
+
+  // announcements
+  register_taxonomy('announcement-category', null,
+    array('hierarchical' => true));
+
+  register_post_type('announcements',
+    array('labels' => array('name'          => 'Announcements',
+                            'singular_name' => "Announcement"),
+          'description' => 'Site-wide announcements.',
+          'public' => false,
+          'show_ui' => true,
+          'taxonomies' => array('announcement-category') ));
+}
+
 
 /**
  * Sets up theme defaults and registers the various WordPress features.
  */
 function obspca_setup() {
   // Adds RSS feed links to <head> for posts and comments.
-  add_theme_support( 'automatic-feed-links' );
+  add_theme_support('automatic-feed-links');
 
-  // This theme supports a variety of post formats.
-  add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+  // Post formats
+  add_theme_support('post-formats', array('image'));
 
   // This theme uses wp_nav_menu() in one location.
-  register_nav_menu( 'primary', 'Global Navbar');
+  register_nav_menu('primary', 'Global Navbar');
+
+  // Featured image support for homepage slider
+  add_theme_support('post-thumbnails'); 
 }
-add_action( 'after_setup_theme', 'obspca_setup' );
+add_action('after_setup_theme', 'obspca_setup');
 
 
 /**
@@ -29,8 +74,13 @@ function obspca_scripts_styles() {
   /*
    * Loads our main stylesheet
    */
-  wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css' );
-  wp_enqueue_style( 'obspca-style', get_stylesheet_uri() );
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css');
+  wp_enqueue_style('obspca-style', get_stylesheet_uri());
+
+  /*
+   * Main JS
+   */
+  wp_enqueue_script('obspca-header', get_template_directory_uri() . '/js/header.js');
 
   /*
    * Bootstrap components
@@ -38,10 +88,16 @@ function obspca_scripts_styles() {
   wp_enqueue_script('jquery');
   wp_enqueue_script('raphael', get_template_directory_uri() . '/vendor/livicons/js/raphael-min.js');
   wp_enqueue_script('livicons', get_template_directory_uri() . '/vendor/livicons/js/livicons-1.2.min.js', array('raphael', 'jquery'));
-  wp_enqueue_script('bootstrap-transition', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-transition.js');
-  wp_enqueue_script('bootstrap-carousel', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-carousel.js');
-  wp_enqueue_script('bootstrap-dropdown', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-dropdown.js');
-  wp_enqueue_script('bootstrap-collapse', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap-collapse.js');
+  wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js');
+
+  /*
+   * Page-specific JS
+   */
+  if (is_home()) {
+
+    wp_enqueue_script('obspca-home', get_template_directory_uri() . '/js/home.js');
+  }
+  
 }
 add_action( 'wp_enqueue_scripts', 'obspca_scripts_styles' );
 
@@ -91,15 +147,33 @@ add_filter( 'wp_title', 'obspca_wp_title', 10, 2 );
  * Registers our main widget area and the front page widget areas.
  */
 function obspca_widgets_init() {
-  register_sidebar( array(
-    'name' => __( 'Main Sidebar', 'twentytwelve' ),
+  register_sidebar(array(
+    'name' => 'Main Sidebar',
     'id' => 'sidebar-1',
-    'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'twentytwelve' ),
+    'description' => 'Appears on posts and pages',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
-  ) );
+  ));
+
+  register_sidebar(array(
+    'name' => 'Homepage Left',
+    'id' => 'homepage-left',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h2 class="widget-title">',
+    'after_title' => '</h2>',
+  ));
+
+  register_sidebar(array(
+    'name' => 'Homepage Right',
+    'id' => 'homepage-right',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h2 class="widget-title">',
+    'after_title' => '</h2>',
+  ));
 }
 add_action( 'widgets_init', 'obspca_widgets_init' );
 
@@ -109,7 +183,7 @@ add_action( 'widgets_init', 'obspca_widgets_init' );
  *
  * Taken from http://www.zachstronaut.com/posts/2009/01/20/php-relative-date-time-string.html
  */
-function obspca_time_elapsed_string($ptime) {
+function obspca_get_time_elapsed_string($ptime) {
   $etime = time() - $ptime;
   
   if ($etime < 1) {
@@ -133,100 +207,6 @@ function obspca_time_elapsed_string($ptime) {
 }
 
 
-
-if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
-/**
- * Displays navigation to next/previous pages when applicable.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_content_nav( $html_id ) {
-  global $wp_query;
-
-  $html_id = esc_attr( $html_id );
-
-  if ( $wp_query->max_num_pages > 1 ) : ?>
-    <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-      <h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
-      <div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
-      <div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
-    </nav><!-- #<?php echo $html_id; ?> .navigation -->
-  <?php endif;
-}
-endif;
-
-if ( ! function_exists( 'twentytwelve_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentytwelve_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_comment( $comment, $args, $depth ) {
-  $GLOBALS['comment'] = $comment;
-  switch ( $comment->comment_type ) :
-    case 'pingback' :
-    case 'trackback' :
-    // Display trackbacks differently than normal comments.
-  ?>
-  <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-    <p><?php _e( 'Pingback:', 'twentytwelve' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
-  <?php
-      break;
-    default :
-    // Proceed with normal comments.
-    global $post;
-  ?>
-  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-    <article id="comment-<?php comment_ID(); ?>" class="comment">
-      <header class="comment-meta comment-author vcard">
-        <?php
-          echo get_avatar( $comment, 44 );
-          printf( '<cite class="fn">%1$s %2$s</cite>',
-            get_comment_author_link(),
-            // If current post author is also comment author, make it known visually.
-            ( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
-          );
-          printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-            esc_url( get_comment_link( $comment->comment_ID ) ),
-            get_comment_time( 'c' ),
-            /* translators: 1: date, 2: time */
-            sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
-          );
-        ?>
-      </header><!-- .comment-meta -->
-
-      <?php if ( '0' == $comment->comment_approved ) : ?>
-        <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
-      <?php endif; ?>
-
-      <section class="comment-content comment">
-        <?php comment_text(); ?>
-        <?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
-      </section><!-- .comment-content -->
-
-      <div class="reply">
-        <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-      </div><!-- .reply -->
-    </article><!-- #comment-## -->
-  <?php
-    break;
-  endswitch; // end comment_type check
-}
-endif;
-
-if ( ! function_exists( 'twentytwelve_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
- *
- * Create your own twentytwelve_entry_meta() to override in a child theme.
- *
- * @since Twenty Twelve 1.0
- */
 function obspca_entry_meta() {
   // Translators: used between list items, there is a space after the comma.
   $categories_list = get_the_category_list( __( ', ', 'twentytwelve' ) );
@@ -264,46 +244,6 @@ function obspca_entry_meta() {
     $author
   );
 }
-endif;
-
-
-/**
- * Adjusts content_width value for full-width and single image attachment
- * templates, and when there are no active widgets in the sidebar.
- *
- * @since Twenty Twelve 1.0
- */
-function obspca_content_width() {
-  if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
-    global $content_width;
-    $content_width = 960;
-  }
-}
-add_action( 'template_redirect', 'obspca_content_width' );
-
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @since Twenty Twelve 1.0
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- * @return void
- */
-function twentytwelve_customize_register( $wp_customize ) {
-  $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-  $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-}
-add_action( 'customize_register', 'twentytwelve_customize_register' );
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_customize_preview_js() {
-  wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
-}
-add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
 
 class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
@@ -364,7 +304,7 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
     // JIEHAN'S CHANGE:
     //   ADD A CARET WHEN THERE'S A DROPDOWN MENU
     if ($args->has_children)
-      $item_output .= ' <span class="caret"></span>';
+      $item_output .= ' <b class="caret"></b>';
     $item_output .= '</a>';
     $item_output .= $args->after;
 
@@ -430,4 +370,25 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
     $cb_args = array_merge( array(&$output, $element, $depth), $args);
     call_user_func_array(array($this, 'end_el'), $cb_args);
   }
+}
+
+add_action('current_screen', 'obspca_add_help_tabs');
+function obspca_add_help_tabs() {
+  $obspca_help = '<p>' . "Several things are critical in making sure that your special posts will be recognized by my code and will be used correctly without breaking the site.  Please pay special attention to the following formatting and categories requirements." . '</p>' .
+    '<p>' . "<strong>Homepage featured image</strong> - select category &ldquo;Homepage banner image&rdquo;.  Then, find &ldquo;Featured image&rdquo; meta box below, and &ldquo;Set featured image&rdquo; to a 2340x560 image.  After you are done, use &ldquo;Preview&rdquo; to see it live.  You must resize your browser window to make sure it looks great for all page widths." . '</p>';
+
+  get_current_screen()->add_help_tab(array(
+    'id'        => 'obspca-general',
+    'title'     => 'OBSPCA Instructions',
+    'content'   => $obspca_help
+  ));
+}
+
+add_action('admin_head', 'obspca_add_help_sidebar');
+function obspca_add_help_sidebar() {
+  $wp_sidebar = get_current_screen()->get_help_sidebar();
+  $sidebar_obspca_prepended = '<p>' . "<strong>If you break something or have technical questions</strong>, contact Jiehan Zheng at zheng@jiehan.org." . '</p>' . 
+      $wp_sidebar;
+
+  get_current_screen()->set_help_sidebar($sidebar_obspca_prepended);
 }

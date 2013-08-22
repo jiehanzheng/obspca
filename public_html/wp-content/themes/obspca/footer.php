@@ -2,7 +2,7 @@
   
 <div id="footer">
   <div class="container">
-    <div class="col col-lg-4">
+    <div class="col-sm-6 col-md-4">
       <h4>Operation Hours</h4>
       <dl class="dl-horizontal">
         <dt>Monday&ndash;Friday</dt>
@@ -13,7 +13,7 @@
         <dd>11:00 AM&ndash;2:00 PM</dd>
       </dl>
     </div>
-    <div class="col col-lg-4">
+    <div class="col-sm-6 col-md-4">
       <h4>Adoption Hours</h4>
       <dl class="dl-horizontal">
         <dt>Monday&ndash;Friday</dt>
@@ -24,7 +24,7 @@
         <dd>11:00 AM&ndash;2:00 PM</dd>
       </dl>
     </div> 
-    <div class="col col-lg-4">
+    <div class="col-sm-12 col-md-4">
       <h4>Outer Banks SPCA</h4>
       <address>
         1031 Driftwood Drive<br>

@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "public_html"
+			"follow_symlinks": true,
+			"path": "/home/jiehan/workspace/obspca"
 		}
 	]
 }

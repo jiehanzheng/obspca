@@ -16,10 +16,10 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'jiehan_obspca');
+define('DB_NAME', 'obspca');
 
 /** MySQL database username */
-define('DB_USER', 'jiehan_scripts');
+define('DB_USER', 'obspca_wp');
 
 /** MySQL database password */
 define('DB_PASSWORD', '');
@@ -78,8 +78,14 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
-define('SAVEQUERIES', true);
+define('WP_DEBUG', false);
+define('SAVEQUERIES', false);
+
+// if not on us1, we are on development machine
+if (!in_array(gethostname(), array('us1'))) {
+  define('WP_HOME', 'http://localhost');
+  define('WP_SITEURL', 'http://localhost');
+}
 
 define('FS_METHOD', 'direct');
 

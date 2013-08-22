@@ -12,6 +12,11 @@
 
   <?php if ( is_search() || is_home() ) : // Only display Excerpts for Search and Home ?>
   <div class="entry-summary">
+    <time pubdate class="time_elapsed"
+          datetime="<?php esc_attr_e(get_the_time('Y-m-d g:i')); ?>"
+          title="<?php esc_attr_e(get_the_time('Y-m-d g:i')); ?>">
+      <?php echo obspca_get_time_elapsed_string(get_the_time('U')) ?> ago &mdash;
+    </time>
     <?php the_excerpt(); ?>
   </div><!-- .entry-summary -->
   <?php else : ?>

@@ -79,7 +79,6 @@ function get_the_pet_path() {
   return "/pet?animalID=" . get_the_pet_id();
 }
 
-
 function get_the_pet_id() {
   global $petpoint;
   return $petpoint->get_id();

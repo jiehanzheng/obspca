@@ -9,23 +9,43 @@ Text Domain: obspca
 
 body {
   color: #5a5a5a;
-  padding-top: 70px;
 }
 
-
-.navbar {
-  #fixed_logo {
-    width: 200px;
+.row#logo_row {
+  #top_logo_area {
+    margin: {
+      top: 20px;
+      bottom: 20px;
+    }
 
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200px;
+      width: 100%;
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  #important_info_area {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    p.lead:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
 
+.entry-summary {
+  time.time_elapsed {
+    font-weight: bold;
+  }
+
+  p {
+    display: inline;
+  }
+}
 
 .home {
 	.carousel {
@@ -42,6 +62,7 @@ body {
     img {
       min-height: 100%;
       max-width: 1170px;
+      max-height: 280px;
     }
 	}
 
@@ -84,6 +105,7 @@ body {
 }
 
 
+// LIVICON
 .livicon {
   display: inline-block;
   line-height: inherit;

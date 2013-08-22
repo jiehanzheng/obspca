@@ -5,8 +5,8 @@ class PetPoint_API {
   /**
    * API Base, with a trailing slash
    */
-  //const API_BASE = "http://www.petango.com/webservices/wsadoption.asmx/"; // prod
-  const API_BASE = "http://qag.petpoint.com/webservices/wsadoption.asmx/"; // dev
+  const API_BASE = "http://www.petango.com/webservices/wsadoption.asmx/"; // prod
+  // const API_BASE = "http://qag.petpoint.com/webservices/wsadoption.asmx/"; // dev
 
   /**
    * Cache TTL (in minutes)
