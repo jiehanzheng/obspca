@@ -15,6 +15,8 @@ body {
     width: 100%; }
   .row#logo_row #top_logo_area h1 {
     margin: 0; }
+.row#logo_row .clearfix {
+  margin-bottom: -20px; }
 .row#logo_row #important_info_area {
   margin-top: 20px;
   margin-bottom: 20px; }
